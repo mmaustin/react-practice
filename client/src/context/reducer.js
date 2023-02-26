@@ -8,7 +8,7 @@ const reducer = (state, action) => {
     if(action.type === ADD_FRUIT){
         return{
             ...state,
-            fruits: action.payload.fruit
+            fruits: [ ...state.fruits, action.payload.fruit]
         }
     }
 }
