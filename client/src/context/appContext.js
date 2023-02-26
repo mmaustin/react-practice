@@ -14,11 +14,19 @@ const AppContext = React.createContext();
 const AppProvider = ({children}) => {
     const [state, dispatch] = useReducer(reducer, initialState)
 
+    const addFruit = () => {
+        //const fruit = ['strawberries'];
+        dispatch({
+            type: ADD_FRUIT,
+            payload: {fruit: ['strawberries']}
+        })
+    }
 
     return(
         <AppContext.Provider
         value={{
           ...state,
+          addFruit
         }}
       >
         {children}
