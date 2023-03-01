@@ -1,19 +1,21 @@
-import { useAppContext } from "./context/appContext";
+import TickTock from "./components/TickTock";
 
+//import { useAppContext } from "./context/appContext";
 
 const App = () => {
-  const {addFruit, fruits} = useAppContext();
+  // const {addFruit, fruits} = useAppContext();
 
-  let displayFruit;
+  // let displayFruit;
  
-  displayFruit = fruits.map((fruit, i)=>{
-    return <p key={i}>{fruit}</p>
-  })
+  // displayFruit = fruits.map((fruit, i)=>{
+  //   return <p key={i}>{fruit}</p>
+  // })
   
   return (
     <div>
-      {displayFruit}
-      <button type="button" onClick={addFruit}>add fruit</button>
+      <TickTock />
+      {/* {displayFruit}
+      <button type="button" onClick={addFruit}>add fruit</button> */}
     </div>
   )
 }
