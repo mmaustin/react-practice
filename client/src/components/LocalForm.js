@@ -8,9 +8,26 @@ const userObject = {
 const LocalForm = () => {
 
     const [values, setValues] = useState(userObject)
+
+    const onSetValues = (e) => setValues({[e.target.name]: [e.target.value]})
+
+    const onHandleSubmit = (e) =>{
+        e.preventDefault();
+        console.log(userObject);
+    }
     console.log(values);
+
   return (
-    <div>LocalForm</div>
+    <div>
+        <form onSubmit={onHandleSubmit}>
+            <input
+            type="text"
+            name={userObject.name}
+            value={userObject.name}
+            onChange={onSetValues}
+            />
+        </form>
+    </div>
   )
 }
 export default LocalForm

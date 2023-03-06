@@ -1,21 +1,24 @@
 //import TickTock from "./components/TickTock";
 
-import { useAppContext } from "./context/appContext";
+import LocalForm from "./components/LocalForm"
+
+//import { useAppContext } from "./context/appContext";
 
 const App = () => {
-  const {addFruit, fruits} = useAppContext();
+  // const {addFruit, fruits} = useAppContext();
 
-  let displayFruit;
+  // let displayFruit;
  
-  displayFruit = fruits.map((fruit, i)=>{
-    return <p key={i}>{fruit}</p>
-  })
+  // displayFruit = fruits.map((fruit, i)=>{
+  //   return <p key={i}>{fruit}</p>
+  // })
   
   return (
     <div>
+      <LocalForm />
       {/* <TickTock /> */}
-      {displayFruit}
-      <button type="button" onClick={addFruit}>add fruit</button>
+      {/* {displayFruit}
+      <button type="button" onClick={addFruit}>add fruit</button> */}
     </div>
   )
 }
