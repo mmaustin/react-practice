@@ -1,5 +1,6 @@
 import {
-    ADD_FRUIT
+    ADD_FRUIT,
+    HANDLE_CHANGE,
 } from './actions';
 
 //import { initialState } from './appContext';
@@ -9,6 +10,13 @@ const reducer = (state, action) => {
         return{
             ...state,
             fruits: [ ...state.fruits, action.payload.fruit]
+        }
+    }
+
+    if(action.type === HANDLE_CHANGE){
+        return {
+            ...state,
+            [action.payload.name]: action.payload.value
         }
     }
 }
