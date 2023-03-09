@@ -1,5 +1,8 @@
 import express from 'express';
+import { tryResponse } from './middleware/index.js';
 const app = express();
+
+app.use(tryResponse);
 
 app.get('/', (req, res) => {
     //res.send('What it do!');
