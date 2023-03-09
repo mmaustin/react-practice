@@ -2,11 +2,14 @@ import React, {useReducer, useContext} from 'react';
 import reducer from './reducer';
 
 import {
-    ADD_FRUIT
+    ADD_FRUIT,
+    HANDLE_CHANGE,
 } from './actions';
 
 const initialState = {
-    fruits: ['apples', 'oranges', 'peaches']
+    fruits: ['apples', 'oranges', 'peaches'],
+    team: '',
+    player: '',
 }
 
 const AppContext = React.createContext();
@@ -22,11 +25,16 @@ const AppProvider = ({children}) => {
         })
     }
 
+    const handleChange = ({team, player}) => {
+      dispatch({type: HANDLE_CHANGE, payload: {team, player}})
+    }
+
     return(
         <AppContext.Provider
         value={{
           ...state,
-          addFruit
+          addFruit,
+          handleChange,
         }}
       >
         {children}

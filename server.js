@@ -1,13 +1,15 @@
 import express from 'express';
 const app = express();
-import { tryResponse } from './middleware/index.js';
+import { tryRequest, tryResponse } from './middleware/index.js';
 
 //you can put your response in a middleware, if need be.
 //Ahh, this is exactly what nonfound middleware does, geez
-app.use(tryResponse);
+//app.use(tryResponse);
+app.use(tryRequest);
 
 app.get('/', (req, res) => {
-    //res.send('What it do!');
+  const bp = req.bloodPressure;
+  res.send(bp);
 })
 
 const port = 5001
