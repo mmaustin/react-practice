@@ -16,7 +16,23 @@ const GlobalForm = () => {
     }
 
   return (
-    <div>GlobalForm</div>
+    <div>
+        <form onSubmit={handleSubmit}>
+            <input
+                type="text"
+                name='team'
+                value={team}
+                onChange={handleInput}
+            />
+            <input
+                type="text"
+                name='player'
+                value={player}
+                onChange={handleInput}
+            />
+            <button type="submit">Click Me</button>
+        </form>
+    </div>
   )
 }
 export default GlobalForm
