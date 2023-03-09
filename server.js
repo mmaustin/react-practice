@@ -2,7 +2,7 @@ import express from 'express';
 const app = express();
 
 app.get('/', (req, res) => {
-    res.send('What it do!');
+    //res.send('What it do!');
 })
 
 const port = 5001
