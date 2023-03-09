@@ -25,8 +25,8 @@ const AppProvider = ({children}) => {
         })
     }
 
-    const handleChange = ({team, player}) => {
-      dispatch({type: HANDLE_CHANGE, payload: {team, player}})
+    const handleChange = ({name, value}) => {
+      dispatch({type: HANDLE_CHANGE, payload: {name, value}})
     }
 
     return(
