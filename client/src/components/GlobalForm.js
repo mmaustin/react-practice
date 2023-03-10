@@ -1,14 +1,14 @@
-import { useEffect, useState } from "react";
+//import { useEffect, useState } from "react";
 import { useAppContext } from "../context/appContext";
 
 const GlobalForm = () => {
 
     const {team, player, handleChange} = useAppContext();
-    const [playa, setPlaya] = useState(player);
+    //const [playa, setPlaya] = useState(player);
 
-    useEffect(() => {
-      setPlaya({player})
-    }, [player])
+    // useEffect(() => {
+    //   setPlaya(player)
+    // }, [player])
     
 
     const handleSubmit = e => {
@@ -42,7 +42,7 @@ const GlobalForm = () => {
             />
             <button type="submit">Click Me</button>
         </form>
-        {playa}
+        {team && player ? <p>{`${player} plays for ${team}`}</p> : <p>Give us a team and player!</p>}
     </div>
   )
 }
