@@ -42,7 +42,6 @@ const GlobalForm = () => {
             />
             <button type="submit">Click Me</button>
         </form>
-        {team && player ? <p>{`${player} plays for ${team}`}</p> : <p>Give us a team and player!</p>}
     </div>
   )
 }
