@@ -1,8 +1,8 @@
 export class Stadium{
-    constructor(stadium){
+    constructor(stadium = 'Chavez Ravine'){
         this.stadium = stadium;
     }
     whichStadium(){
-        return this.stadium
+        console.log(this);
     }
 }

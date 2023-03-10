@@ -1,15 +1,22 @@
-//import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { Stadium } from "../class/stadium";
 import { useAppContext } from "../context/appContext";
 
 const GlobalForm = () => {
 
     const {team, player, handleChange} = useAppContext();
     //const [playa, setPlaya] = useState(player);
+    const [stadium, setStadium] = useState('')
 
-    // useEffect(() => {
-    //   setPlaya(player)
-    // }, [player])
-    
+    useEffect(() => {
+        if(team && player){
+            setStadium(new Stadium().whichStadium)
+        }
+    }, [team, player])
+
+    // const makeStadium = () => {
+    //     <p>{new Stadium()}</p>
+    // }
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -42,6 +49,7 @@ const GlobalForm = () => {
             />
             <button type="submit">Click Me</button>
         </form>
+        {stadium}
     </div>
   )
 }
