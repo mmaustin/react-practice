@@ -1,8 +1,7 @@
 //import TickTock from "./components/TickTock";
-
-import GlobalForm from "./components/GlobalForm"
-
+//import GlobalForm from "./components/GlobalForm"
 //import LocalForm from "./components/LocalForm";
+import UseRef from "./components/UseRef"
 
 
 //import { useAppContext } from "./context/appContext";
@@ -18,7 +17,7 @@ const App = () => {
   
   return (
     <div>
-      <GlobalForm />
+      <UseRef />
       {/* <TickTock /> */}
       {/* {displayFruit}
       <button type="button" onClick={addFruit}>add fruit</button> */}

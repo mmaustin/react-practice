@@ -3,6 +3,6 @@ export class Stadium{
         this.stadium = stadium;
     }
     whichStadium(){
-        console.log(this);
+        return this.stadium;
     }
 }

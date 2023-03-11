@@ -5,18 +5,13 @@ import { useAppContext } from "../context/appContext";
 const GlobalForm = () => {
 
     const {team, player, handleChange} = useAppContext();
-    //const [playa, setPlaya] = useState(player);
     const [stadium, setStadium] = useState('')
 
     useEffect(() => {
         if(team && player){
-            setStadium(new Stadium().whichStadium)
+            setStadium(new Stadium('Hoosier Dome').whichStadium())
         }
     }, [team, player])
-
-    // const makeStadium = () => {
-    //     <p>{new Stadium()}</p>
-    // }
 
     const handleSubmit = e => {
         e.preventDefault();
