@@ -32,19 +32,19 @@ const UseRef = () => {
           <ul ref={listRef}>
             <li>
               <img
-                src="https://placekitten.com/g/200/200"
+                src="https://placekitten.com/g/600/600"
                 alt="Tom"
               />
             </li>
             <li>
               <img
-                src="https://placekitten.com/g/300/200"
+                src="https://placekitten.com/g/600/600"
                 alt="Maru"
               />
             </li>
             <li>
               <img
-                src="https://placekitten.com/g/250/200"
+                src="https://placekitten.com/g/650/600"
                 alt="Jellylorum"
               />
             </li>
