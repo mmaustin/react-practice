@@ -1,6 +1,6 @@
 
 export const register = (req, res) => {
-    res.send('I am registered');
+    res.json({msg: 'I am registered'});
 }
 
 export const login = (req, res) => {
