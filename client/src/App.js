@@ -1,7 +1,8 @@
 //import TickTock from "./components/TickTock";
 //import GlobalForm from "./components/GlobalForm"
 //import LocalForm from "./components/LocalForm";
-import UseRef from "./components/UseRef"
+//import UseRef from "./components/UseRef"
+import TestCors from "./components/TestCors"
 
 
 //import { useAppContext } from "./context/appContext";
@@ -17,7 +18,7 @@ const App = () => {
   
   return (
     <div>
-      <UseRef />
+      <TestCors />
       {/* <TickTock /> */}
       {/* {displayFruit}
       <button type="button" onClick={addFruit}>add fruit</button> */}
