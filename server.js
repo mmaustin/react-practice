@@ -1,5 +1,8 @@
 import express from 'express';
+import connectDB from './db/connect.js';
 const app = express();
+import dotenv from 'dotenv';
+dotenv.config();
 //import { tryRequest, tryResponse } from './middleware/index.js';
 
 //you can put your response in a middleware, if need be.
@@ -19,12 +22,27 @@ app.use('/api/v1/auth', authRouter);
 //   res.json({msg: 'i guess they fixed the manhole cover!'});
 // })
 
-const port = 5001
+// const port = 5001
+
+// const start = async () => {
+//     app.listen(port, () => {
+//       console.log(`Server is listening on port ${port}....`)
+//     })
+// }
+
+// start()
+
+const port = process.env.PORT || 5001
 
 const start = async () => {
+  try {
+    await connectDB(process.env.MONGO_URL)
     app.listen(port, () => {
-      console.log(`Server is listening on port ${port}....`)
+      console.log(`Server is listening on port ${port}...`)
     })
+  } catch (error) {
+    console.log(error)
+  }
 }
 
 start()
