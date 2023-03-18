@@ -4,9 +4,9 @@ export const register = (req, res) => {
 }
 
 export const login = (req, res) => {
-    res.send('I have logged in');
+    res.json({msg: 'I have logged in'});
 }
 
 export const updateUser = (req, res) => {
-    res.send('I have updated my profile');
+    res.json({msg: 'I have updated my profile'});
 }

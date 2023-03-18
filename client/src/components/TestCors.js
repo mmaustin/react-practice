@@ -5,7 +5,7 @@ const TestCors = () => {
 
     const grabJson = async () => {
         try {
-            const response = await fetch('/api/v1/auth/register', {method: "POST"});
+            const response = await fetch('/api/v1/auth/updateUser', {method: "PATCH"});
             console.log(response);
             const data = await response.json();
             console.log(data);
