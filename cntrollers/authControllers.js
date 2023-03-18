@@ -1,4 +1,4 @@
-
+//dummy commit
 export const register = (req, res) => {
     res.json({msg: 'I am registered'});
 }
