@@ -18,10 +18,6 @@ const PlantationSchema = mongoose.Schema({
     location: {
         type: String,
         required: [true, 'Where was this place'],
-    },
-    slaves: {
-        type: Number,
-        required: [true, 'Approximately ow many slaves lived here']
     }
 })
 

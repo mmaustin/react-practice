@@ -1,7 +1,15 @@
-
+import Plantation from "../models/Plantation";
 
 export const createPlantation = async(req, res) => {
-    res.status(201).json({msg: 'another wonderful plantation has been created'});
+    const {name, owner, location} = req.body
+
+    const plantation = await Plantation.create({name, owner, location})
+
+    res.status(201).json({plantation: {
+        name: plantation.name,
+        owner: plantation.owner,
+        location: plantation.location
+    }});
 }
 
 export const getPlantation = async(req, res) => {
