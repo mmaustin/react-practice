@@ -1,10 +1,10 @@
-import { GlobalForm } from "../components";
+import { LocalForm } from "../components";
 
 
 const Landing = () => {
   return (
     <div>
-      <GlobalForm/>
+      <LocalForm/>
     </div>
   )
 }

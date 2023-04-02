@@ -1,6 +1,6 @@
 
-import {BrowserRouter, Router, Routes} from 'react-router-dom';
-import {} from ''
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import { Landing, ErrorPage } from './pages';
 
 
 //import { useAppContext } from "./context/appContext";
@@ -15,7 +15,11 @@ const App = () => {
   // })
   
   return (
-    
+    <BrowserRouter>
+      <Routes>
+          <Route path='/' element={<Landing/>} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 export default App
