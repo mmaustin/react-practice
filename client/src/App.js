@@ -1,8 +1,6 @@
-//import TickTock from "./components/TickTock";
-//import GlobalForm from "./components/GlobalForm"
-import LocalForm from "./components/LocalForm";
-//import UseRef from "./components/UseRef"
-//import TestCors from "./components/TestCors"
+
+import {BrowserRouter, Router, Routes} from 'react-router-dom';
+import {} from ''
 
 
 //import { useAppContext } from "./context/appContext";
@@ -17,13 +15,7 @@ const App = () => {
   // })
   
   return (
-    <div>
-      {/* <TestCors /> */}
-      {/* <TickTock /> */}
-      {/* {displayFruit}
-      <button type="button" onClick={addFruit}>add fruit</button> */}
-      <LocalForm/>
-    </div>
+    
   )
 }
 export default App
