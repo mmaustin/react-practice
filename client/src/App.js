@@ -18,6 +18,7 @@ const App = () => {
     <BrowserRouter>
       <Routes>
           <Route path='/' element={<Landing/>} />
+          <Route path='*' element={<ErrorPage/>} />
       </Routes>
     </BrowserRouter>
   )
