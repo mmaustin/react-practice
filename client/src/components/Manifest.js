@@ -1,16 +1,15 @@
 import { useEffect } from "react";
-import {log} from 'console';
-
 
 const Manifest = () => {
 
     const fetchManifest = async() => {
         try {
-            const response = await fetch('https://ids.si.edu/ids/manifest/NMAAHC-2013_46_6_001');
-            const data = await response.json();
-            log(data)
+            const response = await fetch('https://digitalcollections.nyhistory.org/islandora/object/islandora%3A139196#page/1/mode/1up', {mode: 'no-cors'})
+            console.log(response);
+            const data = await response.json()
+            console.log(data)
         } catch (error) {
-            log(error)
+            console.log(error)
         }
     }
 
