@@ -1,10 +1,12 @@
-import { LocalForm } from "../components";
+import Manifest from "../components/Manifest"
+
+//import { LocalForm } from "../components";
 
 
 const Landing = () => {
   return (
     <div>
-      <LocalForm/>
+      <Manifest/>
     </div>
   )
 }
