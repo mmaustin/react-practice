@@ -1,13 +1,15 @@
 import { useEffect } from "react";
+import axios from 'axios';
 
 const Manifest = () => {
 
     const fetchManifest = async() => {
         try {
-            const response = await fetch('https://espn.com', {mode: 'no-cors'})
+            const {response} = await axios.get('https://espn.com', {mode: 'no-cors'})
             console.log(response);
-            const data = await response.json()
-            console.log(data)
+            //const data = await response.json()
+            // const {data} = response
+            // console.log(data)
         } catch (error) {
             console.log(error)
         }
