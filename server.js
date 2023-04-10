@@ -3,7 +3,7 @@ import connectDB from './db/connect.js';
 const app = express();
 import dotenv from 'dotenv';
 dotenv.config();
-//import { tryRequest, tryResponse } from './middleware/index.js';
+import { notFoundMiddleware } from './middleware/index.js';
 
 //you can put your response in a middleware, if need be.
 //Ahh, this is exactly what nonfound middleware does, geez
@@ -19,6 +19,8 @@ app.use(express.json());
 
 app.use('/api/v1/auth', authRouter);
 app.use('/api/v1/plantation', plantationRouter);
+
+app.use(notFoundMiddleware);
 
 // app.get('/cuz', (req, res) => {
 //   res.json({msg: 'i guess they fixed the manhole cover!'});

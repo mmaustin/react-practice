@@ -1,7 +1,5 @@
-import tryResponse from "./responseTest.js";
-import { tryRequest } from "./responseTest.js";
+import notFoundMiddleware from "./not-found.js";
 
 export {
-    tryResponse,
-    tryRequest
+    notFoundMiddleware,
 }
