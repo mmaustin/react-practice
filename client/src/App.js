@@ -1,6 +1,18 @@
+// import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
-import { Landing, ErrorPage } from './pages';
+import MuiButton from "./mui/MuiButton";
+import MuiTypography from "./mui/MuiTypography";
+import MuiTextField from './mui/MuiTextField';
+import MuiSelect from "./mui/MuiSelect";
+import MuiRadioButton from "./mui/MuiRadioButton";
+import MuiCheckbox from "./mui/MuiCheckbox";
+import MuiSwitch from './mui/MuiSwitch';
+import MuiRating from "./mui/MuiRating";
+import MuiAutocomplete from "./mui/MuiAutocomplete";
+
+
+
+// import { Landing, ErrorPage } from './pages';
 
 
 //import { useAppContext } from "./context/appContext";
@@ -15,12 +27,17 @@ const App = () => {
   // })
   
   return (
-    <BrowserRouter>
-      <Routes>
-          <Route path='/' element={<Landing/>} />
-          <Route path='*' element={<ErrorPage/>} />
-      </Routes>
-    </BrowserRouter>
+    <div>
+      {/* <MuiTypography/> */}
+      {/* <MuiButton/> */}
+      {/* <MuiTextField/> */}
+      {/* <MuiSelect/> */}
+      {/* <MuiRadioButton/> */}
+      {/* <MuiCheckbox/> */}
+      {/* <MuiSwitch/> */}
+      {/* <MuiRating/> */}
+      <MuiAutocomplete/>
+    </div>
   )
 }
 export default App
