@@ -1,14 +1,30 @@
 // import {BrowserRouter, Routes, Route} from 'react-router-dom';
+// import MuiButton from "./mui/MuiButton";
+// import MuiTypography from "./mui/MuiTypography";
+// import MuiTextField from './mui/MuiTextField';
+// import MuiSelect from "./mui/MuiSelect";
+// import MuiRadioButton from "./mui/MuiRadioButton";
+// import MuiCheckbox from "./mui/MuiCheckbox";
+// import MuiSwitch from './mui/MuiSwitch';
+// import MuiRating from "./mui/MuiRating";
+// import MuiAutocomplete from "./mui/MuiAutocomplete";
+// import MuiBox from "./mui/MuiBox";
+// import MuiCard from "./mui/MuiCard";
+// import MuiAccordian from "./mui/MuiAccordian";
+// import MuiImageList from "./mui/MuiImageList";
+//import MuiNavbar from "./mui/MuiNavbar";
+//import MuiLink from "./mui/MuiLink";
+//import MuiBreadcrumbs from "./mui/MuiBreadcrumbs";
+//import MuiBadge from "./mui/MuiBadge"
+import SixPrototype from "./sixFiveFour/SixPrototype"
 
-import MuiButton from "./mui/MuiButton";
-import MuiTypography from "./mui/MuiTypography";
-import MuiTextField from './mui/MuiTextField';
-import MuiSelect from "./mui/MuiSelect";
-import MuiRadioButton from "./mui/MuiRadioButton";
-import MuiCheckbox from "./mui/MuiCheckbox";
-import MuiSwitch from './mui/MuiSwitch';
-import MuiRating from "./mui/MuiRating";
-import MuiAutocomplete from "./mui/MuiAutocomplete";
+// import MuiAvatar from "./mui/MuiAvatar"
+
+//import MuiSpeedDial from "./mui/MuiSpeedDial"
+
+
+//import MuiDrawer from "./mui/MuiDrawer";
+
 
 
 
@@ -36,7 +52,19 @@ const App = () => {
       {/* <MuiCheckbox/> */}
       {/* <MuiSwitch/> */}
       {/* <MuiRating/> */}
-      <MuiAutocomplete/>
+      {/* <MuiAutocomplete/> */}
+      {/* <MuiBox/> */}
+      {/* <MuiCard/> */}
+      {/* <MuiAccordian/> */}
+      {/* <MuiImageList/> */}
+      {/* <MuiNavbar/> */}
+      {/* <MuiLink/> */}
+      {/* <MuiBreadcrumbs/> */}
+      {/* <MuiDrawer/> */}
+      {/* <MuiSpeedDial/> */}
+      {/* <MuiAvatar /> */}
+      {/* <MuiBadge /> */}
+      <SixPrototype />
     </div>
   )
 }

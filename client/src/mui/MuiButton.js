@@ -36,7 +36,7 @@ const MuiButton = () => {
                 <Button onClick={()=> console.log('clicked')} disableRipple variant='contained' startIcon={<Send/>}>send</Button>
                 <Button disableElevation variant='contained' endIcon={<Send/>}>send</Button>
                 <IconButton aria-label="send" color='success' size='medium'><Send/></IconButton>
-                </ButtonGroup>    
+            </ButtonGroup>    
         </Stack>
         <Stack direction='row' >
             <ToggleButtonGroup exclusive size='small' color="success" orientation="vertical" aria-label='text formatting' value={formats} onChange={handleFormatChange}>
