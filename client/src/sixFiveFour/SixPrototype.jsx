@@ -2,7 +2,7 @@ import { Box, Stack } from "@mui/material";
 import { useState } from "react";
 import SixPrototypeBoard from "./SixPrototypeBoard";
 
-console.log(Box);
+//console.log(Box);
 
 const SixPrototype = () => {
   return (
