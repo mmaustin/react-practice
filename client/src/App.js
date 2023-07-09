@@ -17,7 +17,7 @@
 //import MuiBreadcrumbs from "./mui/MuiBreadcrumbs";
 //import MuiBadge from "./mui/MuiBadge"
 import SixPrototype from "./sixFiveFour/SixPrototype"
-
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
 // import MuiAvatar from "./mui/MuiAvatar"
 
 //import MuiSpeedDial from "./mui/MuiSpeedDial"
@@ -44,6 +44,11 @@ const App = () => {
   
   return (
     <div>
+      <BrowserRouter>
+        <Routes>
+        <Route path='/' element={<SixPrototype/>} />
+        </Routes>
+      </BrowserRouter>
       {/* <MuiTypography/> */}
       {/* <MuiButton/> */}
       {/* <MuiTextField/> */}
@@ -64,7 +69,6 @@ const App = () => {
       {/* <MuiSpeedDial/> */}
       {/* <MuiAvatar /> */}
       {/* <MuiBadge /> */}
-      <SixPrototype />
     </div>
   )
 }
