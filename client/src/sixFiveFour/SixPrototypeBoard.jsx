@@ -3,9 +3,10 @@ import { useState } from "react";
 
 const SixPrototypeBoard = () => {
 
-  const arrayOfNumbers = ['ONE', 'TWO', 'THREE', 'FOUR', 'FIVE', 'SIX'];
+  //const arrayOfNumbers = ['ONE', 'TWO', 'THREE', 'FOUR', 'FIVE', 'SIX'];
+  const objectOfNumbers = {'ONE': 'ONE', 'TWO': 'TWO', 'THREE': 'THREE', 'FOUR': 'FOUR', 'FIVE': 'FIVE', 'SIX': 'SIX'};
 
-  const [numbersArray, setNumbersArray] = useState(arrayOfNumbers)
+  const [numbersArray, setNumbersArray] = useState(Object.keys(objectOfNumbers))
   
   const randomNumber = num => {
     const random = Math.floor(Math.random() * numbersArray.length);
