@@ -4,13 +4,14 @@ import { useState } from "react";
 const SixPrototypeBoard = () => {
 
   //const arrayOfNumbers = ['ONE', 'TWO', 'THREE', 'FOUR', 'FIVE', 'SIX'];
-  const objectOfNumbers = {'ONE': 'ONE', 'TWO': 'TWO', 'THREE': 'THREE', 'FOUR': 'FOUR', 'FIVE': 'FIVE', 'SIX': 'SIX'};
-
-  const [numbersArray, setNumbersArray] = useState(Object.keys(objectOfNumbers))
-  
+  //const objectOfNumbers = {'ONE': 'ONE', 'TWO': 'TWO', 'THREE': 'THREE', 'FOUR': 'FOUR', 'FIVE': 'FIVE', 'SIX': 'SIX'};
+  //console.log(objectOfNumbers);
+  //const [numbersArray, setNumbersArray] = useState(Object.keys(objectOfNumbers));
+  const [numbersArray, setNumbersArray] = useState({'ONE': 'ONE', 'TWO': 'TWO', 'THREE': 'THREE', 'FOUR': 'FOUR', 'FIVE': 'FIVE', 'SIX': 'SIX'});
+  console.log(numbersArray);
   const randomNumber = num => {
-    const random = Math.floor(Math.random() * numbersArray.length);
-    if(num === numbersArray[random]){
+    const random = Math.floor(Math.random() * Object.keys(numbersArray).length);
+    if(num === Object.keys(numbersArray)[random]){
       return true;
     } else {
       return false;
@@ -21,65 +22,78 @@ const SixPrototypeBoard = () => {
   const [colorOne, setColorOne] = useState('gray');
   const handleSetColorOne = (number) => {
     if(randomNumber(number) === true){
-      console.log('yes');
       setColorOne('green');
+      delete numbersArray[number];
+      setNumbersArray(numbersArray);
     } else {
-      console.log('no');
-      setColorOne('black')
+      setColorOne('black');
+      delete numbersArray[number];
+      setNumbersArray(numbersArray);
     }
   }
 
   const [colorTwo, setColorTwo] = useState('gray');
   const handleSetColorTwo = (number) => {
     if(randomNumber(number) === true){
-      console.log('yes');
+      //setColorTwo('green');
       setColorTwo('green');
+      delete numbersArray[number];
+      setNumbersArray(numbersArray);      
     } else {
-      console.log('no');
-      setColorTwo('black')
+      setColorTwo('black');
+      delete numbersArray[number];
+      setNumbersArray(numbersArray);
     }
   }
 
   const [colorThree, setColorThree] = useState('gray');
   const handleSetColorThree = (number) => {
     if(randomNumber(number) === true){
-      console.log('yes');
       setColorThree('green');
+      delete numbersArray[number];
+      setNumbersArray(numbersArray);      
     } else {
-      console.log('no');
-      setColorThree('black')
+      setColorThree('black');
+      delete numbersArray[number];
+      setNumbersArray(numbersArray);
     }
   }
 
   const [colorFour, setColorFour] = useState('gray');
   const handleSetColorFour = (number) => {
     if(randomNumber(number) === true){
-      console.log('yes');
       setColorFour('green');
+      delete numbersArray[number];
+      setNumbersArray(numbersArray);      
     } else {
-      console.log('no');
-      setColorFour('black')
+      setColorFour('black');
+      delete numbersArray[number];
+      setNumbersArray(numbersArray);
     }
   }
 
   const [colorFive, setColorFive] = useState('gray');
   const handleSetColorFive = (number) => {
     if(randomNumber(number) === true){
-      console.log('yes');
       setColorFive('green');
+      delete numbersArray[number];
+      setNumbersArray(numbersArray);      
     } else {
-      console.log('no');
-      setColorFive('black')
+      setColorFive('black');
+      delete numbersArray[number];
+      setNumbersArray(numbersArray);
     }
   }
   const [colorSix, setColorSix] = useState('gray');
   const handleSetColorSix = (number) => {
     if(randomNumber(number) === true){
-      console.log('yes');
       setColorSix('green');
+      delete numbersArray[number];
+      setNumbersArray(numbersArray);      
     } else {
-      console.log('no');
-      setColorSix('black')
+      setColorSix('black');
+      delete numbersArray[number];
+      setNumbersArray(numbersArray);
     }
   }
 
