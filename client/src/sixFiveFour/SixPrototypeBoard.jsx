@@ -1,6 +1,8 @@
 import { Box, Stack } from "@mui/material";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { objectOfNumbers } from "./numbersObject";
+import SixPrototypeQuiz from "./SixPrototypeQuiz";
 
 
 const SixPrototypeBoard = () => {
@@ -21,7 +23,7 @@ const SixPrototypeBoard = () => {
     }
   }, [reset, navigate])
 
-  const [numbersObject, setnumbersObject] = useState({'ONE': 'ONE', 'TWO': 'TWO', 'THREE': 'THREE', 'FOUR': 'FOUR', 'FIVE': 'FIVE', 'SIX': 'SIX'});
+  const [numbersObject, setnumbersObject] = useState(objectOfNumbers);
   console.log(numbersObject);
   const randomNumber = num => {
     const random = Math.floor(Math.random() * Object.keys(numbersObject).length);
@@ -133,7 +135,7 @@ const SixPrototypeBoard = () => {
       <p>{score}</p>
       { showQuiz ?
         <>
-        <p>{showQuiz}</p>
+        <SixPrototypeQuiz />
         <button type="button" onClick={() => setShowQuiz('')}>Show Game Board</button>
         </>
         :
