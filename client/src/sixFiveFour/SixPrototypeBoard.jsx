@@ -12,6 +12,7 @@ const SixPrototypeBoard = () => {
 
   const [reset, setReset] = useState('')
   const [score, setScore] = useState(0);
+  const [showQuiz, setShowQuiz] = useState('');
   const navigate = useNavigate();
   
   useEffect(()=>{
@@ -44,6 +45,7 @@ const SixPrototypeBoard = () => {
       setScore(score - digit);
       delete numbersArray[number];
       setNumbersArray(numbersArray);
+      setShowQuiz('quiz');
     }
   }
 
@@ -59,6 +61,7 @@ const SixPrototypeBoard = () => {
       setScore(score - digit)
       delete numbersArray[number];
       setNumbersArray(numbersArray);
+      setShowQuiz('quiz');
     }
   }
 
@@ -74,6 +77,7 @@ const SixPrototypeBoard = () => {
       setScore(score - digit)
       delete numbersArray[number];
       setNumbersArray(numbersArray);
+      setShowQuiz('quiz');
     }
   }
 
@@ -89,6 +93,7 @@ const SixPrototypeBoard = () => {
       setScore(score - digit)
       delete numbersArray[number];
       setNumbersArray(numbersArray);
+      setShowQuiz('quiz');
     }
   }
 
@@ -104,6 +109,7 @@ const SixPrototypeBoard = () => {
       setScore(score - digit)
       delete numbersArray[number];
       setNumbersArray(numbersArray);
+      setShowQuiz('quiz');
     }
   }
   const [colorSix, setColorSix] = useState('gray');
@@ -118,20 +124,28 @@ const SixPrototypeBoard = () => {
       setScore(score - digit)
       delete numbersArray[number];
       setNumbersArray(numbersArray);
+      setShowQuiz('quiz');
     }
   }
 
   return (
     <>
       <p>{score}</p>
-      <Stack direction={'row'}>
-        <Box onClick={() => handleSetColorOne('ONE', 1)} color={'white'} bgcolor={colorOne} height={'245px'} width={'80px'} sx={{border: '1px solid blue' }}>ONE</Box>
-        <Box onClick={() => handleSetColorTwo('TWO', 2)} color={'white'} bgcolor={colorTwo} height={'245px'} width={'80px'} sx={{border: '1px solid blue'}}>TWO</Box>
-        <Box onClick={() => handleSetColorThree('THREE', 3)} color={'white'} bgcolor={colorThree} height={'245px'} width={'80px'} sx={{border: '1px solid blue'}}>THREE</Box>
-        <Box onClick={() => handleSetColorFour('FOUR', 4)} color={'white'} bgcolor={colorFour} height={'245px'} width={'80px'} sx={{border: '1px solid blue'}}>FOUR</Box>
-        <Box onClick={() => handleSetColorFive('FIVE', 5)} color={'white'} bgcolor={colorFive} height={'245px'} width={'80px'} sx={{border: '1px solid blue'}}>FIVE</Box>
-        <Box onClick={() => handleSetColorSix('SIX', 6)} color={'white'} bgcolor={colorSix} height={'245px'} width={'80px'} sx={{border: '1px solid blue'}}>SIX</Box>
-      </Stack>
+      { showQuiz ?
+        <>
+        <p>{showQuiz}</p>
+        <button type="button" onClick={() => setShowQuiz('')}>Show Game Board</button>
+        </>
+        :
+        <Stack direction={'row'}>
+          <Box onClick={() => handleSetColorOne('ONE', 1)} color={'white'} bgcolor={colorOne} height={'245px'} width={'80px'} sx={{border: '1px solid blue' }}>ONE</Box>
+          <Box onClick={() => handleSetColorTwo('TWO', 2)} color={'white'} bgcolor={colorTwo} height={'245px'} width={'80px'} sx={{border: '1px solid blue'}}>TWO</Box>
+          <Box onClick={() => handleSetColorThree('THREE', 3)} color={'white'} bgcolor={colorThree} height={'245px'} width={'80px'} sx={{border: '1px solid blue'}}>THREE</Box>
+          <Box onClick={() => handleSetColorFour('FOUR', 4)} color={'white'} bgcolor={colorFour} height={'245px'} width={'80px'} sx={{border: '1px solid blue'}}>FOUR</Box>
+          <Box onClick={() => handleSetColorFive('FIVE', 5)} color={'white'} bgcolor={colorFive} height={'245px'} width={'80px'} sx={{border: '1px solid blue'}}>FIVE</Box>
+          <Box onClick={() => handleSetColorSix('SIX', 6)} color={'white'} bgcolor={colorSix} height={'245px'} width={'80px'} sx={{border: '1px solid blue'}}>SIX</Box>
+        </Stack>
+      }
       <button type="button" onClick={()=>setReset('reset')}>Restart</button>
     </>
   )
