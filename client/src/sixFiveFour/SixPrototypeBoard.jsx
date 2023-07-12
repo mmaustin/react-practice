@@ -135,7 +135,7 @@ const SixPrototypeBoard = () => {
       <p>{score}</p>
       { showQuiz ?
         <>
-        <SixPrototypeQuiz />
+        <SixPrototypeQuiz score={score} />
         <button type="button" onClick={() => setShowQuiz('')}>Show Game Board</button>
         </>
         :

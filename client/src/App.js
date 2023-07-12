@@ -16,8 +16,9 @@
 //import MuiLink from "./mui/MuiLink";
 //import MuiBreadcrumbs from "./mui/MuiBreadcrumbs";
 //import MuiBadge from "./mui/MuiBadge"
-import SixPrototype from "./sixFiveFour/SixPrototype"
+import SixPrototype from "./sixFiveFour/SixPrototype";
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import SixPrototypeQuiz from "./sixFiveFour/SixPrototypeQuiz";
 // import MuiAvatar from "./mui/MuiAvatar"
 
 //import MuiSpeedDial from "./mui/MuiSpeedDial"
@@ -47,6 +48,7 @@ const App = () => {
       <BrowserRouter>
         <Routes>
         <Route path='/' element={<SixPrototype/>} />
+        <Route path='/random' element={<SixPrototypeQuiz/>} />
         </Routes>
       </BrowserRouter>
       {/* <MuiTypography/> */}

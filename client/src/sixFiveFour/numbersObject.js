@@ -27,4 +27,4 @@ export const questionsAnswers = {
   answers: ['fake answer 1', 'fake answer 2', 'fake answer 3'],
   answer: 'fake answer 3'
   },
-}
+};
