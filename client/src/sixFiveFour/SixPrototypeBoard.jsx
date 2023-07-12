@@ -8,7 +8,7 @@ const SixPrototypeBoard = () => {
   //const arrayOfNumbers = ['ONE', 'TWO', 'THREE', 'FOUR', 'FIVE', 'SIX'];
   //const objectOfNumbers = {'ONE': 'ONE', 'TWO': 'TWO', 'THREE': 'THREE', 'FOUR': 'FOUR', 'FIVE': 'FIVE', 'SIX': 'SIX'};
   //console.log(objectOfNumbers);
-  //const [numbersArray, setNumbersArray] = useState(Object.keys(objectOfNumbers));
+  //const [numbersObject, setnumbersObject] = useState(Object.keys(objectOfNumbers));
 
   const [reset, setReset] = useState('')
   const [score, setScore] = useState(0);
@@ -21,11 +21,11 @@ const SixPrototypeBoard = () => {
     }
   }, [reset, navigate])
 
-  const [numbersArray, setNumbersArray] = useState({'ONE': 'ONE', 'TWO': 'TWO', 'THREE': 'THREE', 'FOUR': 'FOUR', 'FIVE': 'FIVE', 'SIX': 'SIX'});
-  console.log(numbersArray);
+  const [numbersObject, setnumbersObject] = useState({'ONE': 'ONE', 'TWO': 'TWO', 'THREE': 'THREE', 'FOUR': 'FOUR', 'FIVE': 'FIVE', 'SIX': 'SIX'});
+  console.log(numbersObject);
   const randomNumber = num => {
-    const random = Math.floor(Math.random() * Object.keys(numbersArray).length);
-    if(num === Object.keys(numbersArray)[random]){
+    const random = Math.floor(Math.random() * Object.keys(numbersObject).length);
+    if(num === Object.keys(numbersObject)[random]){
       return true;
     } else {
       return false;
@@ -38,13 +38,13 @@ const SixPrototypeBoard = () => {
     if(randomNumber(number) === true){
       setColorOne('green');
       setScore(score + digit);
-      delete numbersArray[number];
-      setNumbersArray(numbersArray);
+      delete numbersObject[number];
+      setnumbersObject(numbersObject);
     } else {
       setColorOne('black');
       setScore(score - digit);
-      delete numbersArray[number];
-      setNumbersArray(numbersArray);
+      delete numbersObject[number];
+      setnumbersObject(numbersObject);
       setShowQuiz('quiz');
     }
   }
@@ -54,13 +54,13 @@ const SixPrototypeBoard = () => {
     if(randomNumber(number) === true){
       setColorTwo('green');
       setScore(score + digit)
-      delete numbersArray[number];
-      setNumbersArray(numbersArray);      
+      delete numbersObject[number];
+      setnumbersObject(numbersObject);      
     } else {
       setColorTwo('black');
       setScore(score - digit)
-      delete numbersArray[number];
-      setNumbersArray(numbersArray);
+      delete numbersObject[number];
+      setnumbersObject(numbersObject);
       setShowQuiz('quiz');
     }
   }
@@ -70,13 +70,13 @@ const SixPrototypeBoard = () => {
     if(randomNumber(number) === true){
       setColorThree('green');
       setScore(score + digit)
-      delete numbersArray[number];
-      setNumbersArray(numbersArray);      
+      delete numbersObject[number];
+      setnumbersObject(numbersObject);      
     } else {
       setColorThree('black');
       setScore(score - digit)
-      delete numbersArray[number];
-      setNumbersArray(numbersArray);
+      delete numbersObject[number];
+      setnumbersObject(numbersObject);
       setShowQuiz('quiz');
     }
   }
@@ -86,13 +86,13 @@ const SixPrototypeBoard = () => {
     if(randomNumber(number) === true){
       setColorFour('green');
       setScore(score + digit)
-      delete numbersArray[number];
-      setNumbersArray(numbersArray);      
+      delete numbersObject[number];
+      setnumbersObject(numbersObject);      
     } else {
       setColorFour('black');
       setScore(score - digit)
-      delete numbersArray[number];
-      setNumbersArray(numbersArray);
+      delete numbersObject[number];
+      setnumbersObject(numbersObject);
       setShowQuiz('quiz');
     }
   }
@@ -102,13 +102,13 @@ const SixPrototypeBoard = () => {
     if(randomNumber(number) === true){
       setColorFive('green');
       setScore(score + digit)
-      delete numbersArray[number];
-      setNumbersArray(numbersArray);      
+      delete numbersObject[number];
+      setnumbersObject(numbersObject);      
     } else {
       setColorFive('black');
       setScore(score - digit)
-      delete numbersArray[number];
-      setNumbersArray(numbersArray);
+      delete numbersObject[number];
+      setnumbersObject(numbersObject);
       setShowQuiz('quiz');
     }
   }
@@ -117,13 +117,13 @@ const SixPrototypeBoard = () => {
     if(randomNumber(number) === true){
       setColorSix('green');
       setScore(score + digit)
-      delete numbersArray[number];
-      setNumbersArray(numbersArray);      
+      delete numbersObject[number];
+      setnumbersObject(numbersObject);      
     } else {
       setColorSix('black');
       setScore(score - digit)
-      delete numbersArray[number];
-      setNumbersArray(numbersArray);
+      delete numbersObject[number];
+      setnumbersObject(numbersObject);
       setShowQuiz('quiz');
     }
   }
