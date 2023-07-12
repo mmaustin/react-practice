@@ -11,6 +11,7 @@ const SixPrototypeBoard = () => {
   //const [numbersArray, setNumbersArray] = useState(Object.keys(objectOfNumbers));
 
   const [reset, setReset] = useState('')
+  const [score, setScore] = useState(0);
   const navigate = useNavigate();
   
   useEffect(()=>{
@@ -111,6 +112,7 @@ const SixPrototypeBoard = () => {
 
   return (
     <>
+      <p>{score}</p>
       <Stack direction={'row'}>
         <Box onClick={() => handleSetColorOne('ONE')} color={'white'} bgcolor={colorOne} height={'245px'} width={'80px'} sx={{border: '1px solid blue' }}>ONE</Box>
         <Box onClick={() => handleSetColorTwo('TWO')} color={'white'} bgcolor={colorTwo} height={'245px'} width={'80px'} sx={{border: '1px solid blue'}}>TWO</Box>
