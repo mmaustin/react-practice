@@ -33,78 +33,89 @@ const SixPrototypeBoard = () => {
   
   
   const [colorOne, setColorOne] = useState('gray');
-  const handleSetColorOne = (number) => {
+  const handleSetColorOne = (number, digit) => {
     if(randomNumber(number) === true){
       setColorOne('green');
+      setScore(score + digit);
       delete numbersArray[number];
       setNumbersArray(numbersArray);
     } else {
       setColorOne('black');
+      setScore(score - digit);
       delete numbersArray[number];
       setNumbersArray(numbersArray);
     }
   }
 
   const [colorTwo, setColorTwo] = useState('gray');
-  const handleSetColorTwo = (number) => {
+  const handleSetColorTwo = (number, digit) => {
     if(randomNumber(number) === true){
-      //setColorTwo('green');
       setColorTwo('green');
+      setScore(score + digit)
       delete numbersArray[number];
       setNumbersArray(numbersArray);      
     } else {
       setColorTwo('black');
+      setScore(score - digit)
       delete numbersArray[number];
       setNumbersArray(numbersArray);
     }
   }
 
   const [colorThree, setColorThree] = useState('gray');
-  const handleSetColorThree = (number) => {
+  const handleSetColorThree = (number, digit) => {
     if(randomNumber(number) === true){
       setColorThree('green');
+      setScore(score + digit)
       delete numbersArray[number];
       setNumbersArray(numbersArray);      
     } else {
       setColorThree('black');
+      setScore(score - digit)
       delete numbersArray[number];
       setNumbersArray(numbersArray);
     }
   }
 
   const [colorFour, setColorFour] = useState('gray');
-  const handleSetColorFour = (number) => {
+  const handleSetColorFour = (number, digit) => {
     if(randomNumber(number) === true){
       setColorFour('green');
+      setScore(score + digit)
       delete numbersArray[number];
       setNumbersArray(numbersArray);      
     } else {
       setColorFour('black');
+      setScore(score - digit)
       delete numbersArray[number];
       setNumbersArray(numbersArray);
     }
   }
 
   const [colorFive, setColorFive] = useState('gray');
-  const handleSetColorFive = (number) => {
+  const handleSetColorFive = (number, digit) => {
     if(randomNumber(number) === true){
       setColorFive('green');
+      setScore(score + digit)
       delete numbersArray[number];
       setNumbersArray(numbersArray);      
     } else {
       setColorFive('black');
+      setScore(score - digit)
       delete numbersArray[number];
       setNumbersArray(numbersArray);
     }
   }
   const [colorSix, setColorSix] = useState('gray');
-  const handleSetColorSix = (number) => {
+  const handleSetColorSix = (number, digit) => {
     if(randomNumber(number) === true){
       setColorSix('green');
+      setScore(score + digit)
       delete numbersArray[number];
       setNumbersArray(numbersArray);      
     } else {
       setColorSix('black');
+      setScore(score - digit)
       delete numbersArray[number];
       setNumbersArray(numbersArray);
     }
@@ -114,12 +125,12 @@ const SixPrototypeBoard = () => {
     <>
       <p>{score}</p>
       <Stack direction={'row'}>
-        <Box onClick={() => handleSetColorOne('ONE')} color={'white'} bgcolor={colorOne} height={'245px'} width={'80px'} sx={{border: '1px solid blue' }}>ONE</Box>
-        <Box onClick={() => handleSetColorTwo('TWO')} color={'white'} bgcolor={colorTwo} height={'245px'} width={'80px'} sx={{border: '1px solid blue'}}>TWO</Box>
-        <Box onClick={() => handleSetColorThree('THREE')} color={'white'} bgcolor={colorThree} height={'245px'} width={'80px'} sx={{border: '1px solid blue'}}>THREE</Box>
-        <Box onClick={() => handleSetColorFour('FOUR')} color={'white'} bgcolor={colorFour} height={'245px'} width={'80px'} sx={{border: '1px solid blue'}}>FOUR</Box>
-        <Box onClick={() => handleSetColorFive('FIVE')} color={'white'} bgcolor={colorFive} height={'245px'} width={'80px'} sx={{border: '1px solid blue'}}>FIVE</Box>
-        <Box onClick={() => handleSetColorSix('SIX')} color={'white'} bgcolor={colorSix} height={'245px'} width={'80px'} sx={{border: '1px solid blue'}}>SIX</Box>
+        <Box onClick={() => handleSetColorOne('ONE', 1)} color={'white'} bgcolor={colorOne} height={'245px'} width={'80px'} sx={{border: '1px solid blue' }}>ONE</Box>
+        <Box onClick={() => handleSetColorTwo('TWO', 2)} color={'white'} bgcolor={colorTwo} height={'245px'} width={'80px'} sx={{border: '1px solid blue'}}>TWO</Box>
+        <Box onClick={() => handleSetColorThree('THREE', 3)} color={'white'} bgcolor={colorThree} height={'245px'} width={'80px'} sx={{border: '1px solid blue'}}>THREE</Box>
+        <Box onClick={() => handleSetColorFour('FOUR', 4)} color={'white'} bgcolor={colorFour} height={'245px'} width={'80px'} sx={{border: '1px solid blue'}}>FOUR</Box>
+        <Box onClick={() => handleSetColorFive('FIVE', 5)} color={'white'} bgcolor={colorFive} height={'245px'} width={'80px'} sx={{border: '1px solid blue'}}>FIVE</Box>
+        <Box onClick={() => handleSetColorSix('SIX', 6)} color={'white'} bgcolor={colorSix} height={'245px'} width={'80px'} sx={{border: '1px solid blue'}}>SIX</Box>
       </Stack>
       <button type="button" onClick={()=>setReset('reset')}>Restart</button>
     </>
