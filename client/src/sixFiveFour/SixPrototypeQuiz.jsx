@@ -14,15 +14,28 @@ const SixPrototypeQuiz = ({score}) => {
   };
 
   let property = Object.values(questionsAnswers)[randomNumber];
-  //Object.entries(property)[0] = question: "fake question 1"
-  //Object.entries(property)[1] = answers: ['fake answer 1', 'fake answer 2', 'fake answer 3']
-  //Object.entries(property)[2] = answer: 'fake answer 2'
-  console.log(Object.entries(property));
+  let question, answerChoices, answer;
+  [,question] = Object.entries(property)[0];
+  [,answerChoices] = Object.entries(property)[1];
+  [,answer] = Object.entries(property)[2];
+
+  answerChoices = answerChoices.map((item, i) => {
+    return <p key={i}>{item}</p>
+  })
+
+  //console.log(question, answerChoices, answer);
+  //Object.entries(property)[0] = [question, "fake question 1"]
+  //Object.entries(property)[1] = [answers, ['fake answer 1', 'fake answer 2', 'fake answer 3']]
+  //Object.entries(property)[2] = [answer, 'fake answer 2']
+  //console.log(Object.entries(property));
 
   return (
     <>
-      <div>{score}</div>
-      <p>{randomNumber}</p>
+      <p>{question}</p>
+      <div>
+        {answerChoices}
+      </div>
+      <p>{answer}</p>
       <button type="button" onClick={randomFunction}>Get Random</button>
     </>
   )
