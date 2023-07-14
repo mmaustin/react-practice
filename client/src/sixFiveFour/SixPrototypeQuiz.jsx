@@ -1,3 +1,4 @@
+import { Box, FormControl, FormControlLabel, FormLabel, Radio, RadioGroup } from "@mui/material";
 import { useState } from "react";
 import { questionsAnswers } from "./numbersObject"
 //console.log(Object.values(questionsAnswers));
@@ -5,6 +6,7 @@ import { questionsAnswers } from "./numbersObject"
 const SixPrototypeQuiz = ({score}) => {
   
   const [randomNumber, setRandomNumber] = useState(0);
+  const [value, setValue] = useState('');
 
   const randomFunction = () => {
     const random = Math.floor(Math.random() * Object.keys(questionsAnswers).length);
@@ -20,21 +22,31 @@ const SixPrototypeQuiz = ({score}) => {
   [,answer] = Object.entries(property)[2];
 
   answerChoices = answerChoices.map((item, i) => {
-    return <p key={i}>{item}</p>
+    return <FormControlLabel key={i} control={<Radio/>} label={item} value={item} />
   })
 
-  //console.log(question, answerChoices, answer);
-  //Object.entries(property)[0] = [question, "fake question 1"]
-  //Object.entries(property)[1] = [answers, ['fake answer 1', 'fake answer 2', 'fake answer 3']]
-  //Object.entries(property)[2] = [answer, 'fake answer 2']
-  //console.log(Object.entries(property));
+  // <FormControlLabel control={<Radio/>} label='0-2' value='0-2' />
+  // <FormControlLabel control={<Radio/>} label='3-5' value='3-5' />
+  // <FormControlLabel control={<Radio/>} label='6-10' value='6-10' />
 
   return (
     <>
       <p>{question}</p>
-      <div>
-        {answerChoices}
-      </div>
+      <Box>
+      <FormControl>
+        <FormLabel id='answer-choices-group-label'>
+          Select Your Answer
+        </FormLabel>
+        <RadioGroup
+          name='answer-choices-group'
+          aria-labelledby="answer-choices-group-label"
+          value={value}
+          //onChange={handleChange}
+        >
+          {answerChoices}
+        </RadioGroup>
+      </FormControl>
+      </Box>
       <p>{answer}</p>
       <button type="button" onClick={randomFunction}>Get Random</button>
     </>
