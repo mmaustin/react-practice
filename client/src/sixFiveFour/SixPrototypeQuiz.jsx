@@ -13,11 +13,16 @@ const SixPrototypeQuiz = ({score}) => {
     //console.log(random);
   };
 
-  console.log(randomNumber);
+  let property = Object.values(questionsAnswers)[randomNumber];
+  //Object.entries(property)[0] = question: "fake question 1"
+  //Object.entries(property)[1] = answers: ['fake answer 1', 'fake answer 2', 'fake answer 3']
+  //Object.entries(property)[2] = answer: 'fake answer 2'
+  console.log(Object.entries(property));
 
   return (
     <>
       <div>{score}</div>
+      <p>{randomNumber}</p>
       <button type="button" onClick={randomFunction}>Get Random</button>
     </>
   )
