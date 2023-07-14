@@ -3,10 +3,16 @@ import { useState } from "react";
 import { questionsAnswers } from "./numbersObject"
 //console.log(Object.values(questionsAnswers));
 
-const SixPrototypeQuiz = ({score}) => {
+const SixPrototypeQuiz = ({score, setShowQuiz}) => {
   
   const [randomNumber, setRandomNumber] = useState(0);
   const [value, setValue] = useState('');
+
+  const handleChange = e => {
+    e.preventDefault();
+    setValue(e.target.value);
+  }
+  console.log(value);
 
   const randomFunction = () => {
     const random = Math.floor(Math.random() * Object.keys(questionsAnswers).length);
@@ -14,7 +20,7 @@ const SixPrototypeQuiz = ({score}) => {
     //let property = Object.values(questionsAnswers)[random];
     //console.log(random);
   };
-
+  console.log(questionsAnswers);
   let property = Object.values(questionsAnswers)[randomNumber];
   let question, answerChoices, answer;
   [,question] = Object.entries(property)[0];
@@ -25,9 +31,15 @@ const SixPrototypeQuiz = ({score}) => {
     return <FormControlLabel key={i} control={<Radio/>} label={item} value={item} />
   })
 
-  // <FormControlLabel control={<Radio/>} label='0-2' value='0-2' />
-  // <FormControlLabel control={<Radio/>} label='3-5' value='3-5' />
-  // <FormControlLabel control={<Radio/>} label='6-10' value='6-10' />
+  const submitAnswer = () => {
+    if(value === answer){
+      console.log('yes');
+    } else {
+      console.log('no');
+    }
+    delete questionsAnswers[Object.keys(questionsAnswers)[randomNumber]]
+    setShowQuiz('');
+  }
 
   return (
     <>
@@ -41,7 +53,7 @@ const SixPrototypeQuiz = ({score}) => {
           name='answer-choices-group'
           aria-labelledby="answer-choices-group-label"
           value={value}
-          //onChange={handleChange}
+          onChange={handleChange}
         >
           {answerChoices}
         </RadioGroup>
@@ -49,6 +61,7 @@ const SixPrototypeQuiz = ({score}) => {
       </Box>
       <p>{answer}</p>
       <button type="button" onClick={randomFunction}>Get Random</button>
+      <button type="button" onClick={submitAnswer}>Submit Answer</button>
     </>
   )
 }

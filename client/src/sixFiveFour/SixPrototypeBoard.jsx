@@ -135,8 +135,8 @@ const SixPrototypeBoard = () => {
       <p>{score}</p>
       { showQuiz ?
         <>
-        <SixPrototypeQuiz score={score} />
-        <button type="button" onClick={() => setShowQuiz('')}>Show Game Board</button>
+        <SixPrototypeQuiz score={score} setShowQuiz={setShowQuiz}/>
+        {/* <button type="button" onClick={() => setShowQuiz('')}>Show Game Board</button> */}
         </>
         :
         <Stack direction={'row'}>
