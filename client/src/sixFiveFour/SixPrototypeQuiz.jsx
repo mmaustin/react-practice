@@ -3,9 +3,10 @@ import { useState } from "react";
 import { questionsAnswers } from "./numbersObject"
 //console.log(Object.values(questionsAnswers));
 
-const SixPrototypeQuiz = ({score, setShowQuiz, setScore, amount, setAmount}) => {
+const SixPrototypeQuiz = ({score, setShowQuiz, setScore, amount, setAmount, startQuizNumber}) => {
   
-  const [randomNumber, setRandomNumber] = useState(1);
+  const [randomNumber, setRandomNumber] = useState(startQuizNumber);
+  console.log(startQuizNumber);
   console.log('random number:', randomNumber);
   const [value, setValue] = useState('');
 

@@ -1,29 +1,31 @@
 import { Box, Stack } from "@mui/material";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { objectOfNumbers } from "./numbersObject";
+import { objectOfNumbers, questionsAnswers } from "./numbersObject";
 import SixPrototypeQuiz from "./SixPrototypeQuiz";
 
 
 const SixPrototypeBoard = () => {
-
+  
   //const arrayOfNumbers = ['ONE', 'TWO', 'THREE', 'FOUR', 'FIVE', 'SIX'];
   //const objectOfNumbers = {'ONE': 'ONE', 'TWO': 'TWO', 'THREE': 'THREE', 'FOUR': 'FOUR', 'FIVE': 'FIVE', 'SIX': 'SIX'};
   //console.log(objectOfNumbers);
   //const [numbersObject, setnumbersObject] = useState(Object.keys(objectOfNumbers));
-
+  
   const [reset, setReset] = useState('')
   const [score, setScore] = useState(0);
   const [showQuiz, setShowQuiz] = useState('');
   const [amount, setAmount] = useState(0);
+  const [startQuizNumber, setStartQuizNumber] = useState(0);
+  console.log(`Please Help: ${startQuizNumber}`);
   const navigate = useNavigate();
-
+  
   useEffect(()=>{
     if(reset){
       navigate(0);
     }
   }, [reset, navigate])
-
+  
   const [numbersObject, setnumbersObject] = useState(objectOfNumbers);
   //console.log(numbersObject);
   const randomNumber = num => {
@@ -35,6 +37,17 @@ const SixPrototypeBoard = () => {
     }
   }
   
+  const randomFunction = () => {
+    let random = Math.floor(Math.random() * Object.keys(questionsAnswers).length);
+    console.log('another log!', Object.keys(questionsAnswers).length);
+    while(random === 0){
+      random = Math.floor(Math.random() * Object.keys(questionsAnswers).length);
+    }
+    
+    setStartQuizNumber(random);
+    //let property = Object.values(questionsAnswers)[random];
+    //console.log(random);
+  };
   
   const [colorOne, setColorOne] = useState('gray');
   const handleSetColorOne = (number, digit) => {
@@ -46,6 +59,7 @@ const SixPrototypeBoard = () => {
       setnumbersObject(numbersObject);
       setAmount(0);
     } else {
+      randomFunction();
       setColorOne('black');
       setScore(score - digit);
       delete numbersObject[number];
@@ -64,6 +78,7 @@ const SixPrototypeBoard = () => {
       setnumbersObject(numbersObject);
       setAmount(0);     
     } else {
+      randomFunction();
       setColorTwo('black');
       setScore(score - digit)
       delete numbersObject[number];
@@ -82,6 +97,7 @@ const SixPrototypeBoard = () => {
       setnumbersObject(numbersObject);  
       setAmount(0);    
     } else {
+      randomFunction();
       setColorThree('black');
       setScore(score - digit)
       delete numbersObject[number];
@@ -100,6 +116,7 @@ const SixPrototypeBoard = () => {
       setnumbersObject(numbersObject); 
       setAmount(0);     
     } else {
+      randomFunction();
       setColorFour('black');
       setScore(score - digit)
       delete numbersObject[number];
@@ -118,6 +135,7 @@ const SixPrototypeBoard = () => {
       setnumbersObject(numbersObject);
       setAmount(0);      
     } else {
+      randomFunction();
       setColorFive('black');
       setScore(score - digit)
       delete numbersObject[number];
@@ -136,6 +154,7 @@ const SixPrototypeBoard = () => {
       setnumbersObject(numbersObject); 
       setAmount(0);     
     } else {
+      randomFunction();
       setColorSix('black');
       setScore(score - digit)
       delete numbersObject[number];
@@ -149,7 +168,7 @@ const SixPrototypeBoard = () => {
       <p>{score}</p>
       { showQuiz ?
         <>
-        <SixPrototypeQuiz score={score} setShowQuiz={setShowQuiz} setScore={setScore} setAmount={setAmount} amount={amount} />
+        <SixPrototypeQuiz score={score} setShowQuiz={setShowQuiz} setScore={setScore} setAmount={setAmount} amount={amount} startQuizNumber={startQuizNumber}/>
         {/* <button type="button" onClick={() => setShowQuiz('')}>Show Game Board</button> */}
         </>
         :
