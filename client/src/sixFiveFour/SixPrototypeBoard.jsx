@@ -24,7 +24,7 @@ const SixPrototypeBoard = () => {
   }, [reset, navigate])
 
   const [numbersObject, setnumbersObject] = useState(objectOfNumbers);
-  console.log(numbersObject);
+  //console.log(numbersObject);
   const randomNumber = num => {
     const random = Math.floor(Math.random() * Object.keys(numbersObject).length);
     if(num === Object.keys(numbersObject)[random]){
@@ -135,7 +135,7 @@ const SixPrototypeBoard = () => {
       <p>{score}</p>
       { showQuiz ?
         <>
-        <SixPrototypeQuiz score={score} setShowQuiz={setShowQuiz}/>
+        <SixPrototypeQuiz score={score} setShowQuiz={setShowQuiz} setScore={setScore}/>
         {/* <button type="button" onClick={() => setShowQuiz('')}>Show Game Board</button> */}
         </>
         :
