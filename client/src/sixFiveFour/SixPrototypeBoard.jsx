@@ -17,7 +17,7 @@ const SixPrototypeBoard = () => {
   const [showQuiz, setShowQuiz] = useState('');
   const [amount, setAmount] = useState(0);
   const navigate = useNavigate();
-  
+
   useEffect(()=>{
     if(reset){
       navigate(0);
@@ -149,7 +149,7 @@ const SixPrototypeBoard = () => {
       <p>{score}</p>
       { showQuiz ?
         <>
-        <SixPrototypeQuiz score={score} setShowQuiz={setShowQuiz} setScore={setScore} setAmount={setAmount} amount={amount}/>
+        <SixPrototypeQuiz score={score} setShowQuiz={setShowQuiz} setScore={setScore} setAmount={setAmount} amount={amount} />
         {/* <button type="button" onClick={() => setShowQuiz('')}>Show Game Board</button> */}
         </>
         :

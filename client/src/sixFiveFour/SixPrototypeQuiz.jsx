@@ -5,7 +5,7 @@ import { questionsAnswers } from "./numbersObject"
 
 const SixPrototypeQuiz = ({score, setShowQuiz, setScore, amount, setAmount}) => {
   
-  const [randomNumber, setRandomNumber] = useState(0);
+  const [randomNumber, setRandomNumber] = useState(1);
   console.log('random number:', randomNumber);
   const [value, setValue] = useState('');
 
@@ -15,8 +15,8 @@ const SixPrototypeQuiz = ({score, setShowQuiz, setScore, amount, setAmount}) => 
   }
 
   const randomFunction = () => {
-    let random = 0;
-    while(random === 0){
+    let random = Math.floor(Math.random() * Object.keys(questionsAnswers).length);
+    while(random === 0 || random === randomNumber){
       random = Math.floor(Math.random() * Object.keys(questionsAnswers).length);
     }
     
