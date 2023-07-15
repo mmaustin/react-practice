@@ -38,7 +38,7 @@ const SixPrototypeBoard = () => {
   
   const [colorOne, setColorOne] = useState('gray');
   const handleSetColorOne = (number, digit) => {
-    setAmount(digit)
+    setAmount(digit);
     if(randomNumber(number) === true){
       setColorOne('green');
       setScore(score + digit);
@@ -56,11 +56,13 @@ const SixPrototypeBoard = () => {
 
   const [colorTwo, setColorTwo] = useState('gray');
   const handleSetColorTwo = (number, digit) => {
+    setAmount(digit);
     if(randomNumber(number) === true){
       setColorTwo('green');
       setScore(score + digit)
       delete numbersObject[number];
-      setnumbersObject(numbersObject);      
+      setnumbersObject(numbersObject);
+      setAmount(0);     
     } else {
       setColorTwo('black');
       setScore(score - digit)
@@ -72,11 +74,13 @@ const SixPrototypeBoard = () => {
 
   const [colorThree, setColorThree] = useState('gray');
   const handleSetColorThree = (number, digit) => {
+    setAmount(digit);
     if(randomNumber(number) === true){
       setColorThree('green');
       setScore(score + digit)
       delete numbersObject[number];
-      setnumbersObject(numbersObject);      
+      setnumbersObject(numbersObject);  
+      setAmount(0);    
     } else {
       setColorThree('black');
       setScore(score - digit)
@@ -88,11 +92,13 @@ const SixPrototypeBoard = () => {
 
   const [colorFour, setColorFour] = useState('gray');
   const handleSetColorFour = (number, digit) => {
+    setAmount(digit);
     if(randomNumber(number) === true){
       setColorFour('green');
       setScore(score + digit)
       delete numbersObject[number];
-      setnumbersObject(numbersObject);      
+      setnumbersObject(numbersObject); 
+      setAmount(0);     
     } else {
       setColorFour('black');
       setScore(score - digit)
@@ -104,11 +110,13 @@ const SixPrototypeBoard = () => {
 
   const [colorFive, setColorFive] = useState('gray');
   const handleSetColorFive = (number, digit) => {
+    setAmount(digit);
     if(randomNumber(number) === true){
       setColorFive('green');
       setScore(score + digit)
       delete numbersObject[number];
-      setnumbersObject(numbersObject);      
+      setnumbersObject(numbersObject);
+      setAmount(0);      
     } else {
       setColorFive('black');
       setScore(score - digit)
@@ -117,13 +125,16 @@ const SixPrototypeBoard = () => {
       setShowQuiz('quiz');
     }
   }
+
   const [colorSix, setColorSix] = useState('gray');
   const handleSetColorSix = (number, digit) => {
+    setAmount(digit);
     if(randomNumber(number) === true){
       setColorSix('green');
       setScore(score + digit)
       delete numbersObject[number];
-      setnumbersObject(numbersObject);      
+      setnumbersObject(numbersObject); 
+      setAmount(0);     
     } else {
       setColorSix('black');
       setScore(score - digit)

@@ -61,7 +61,7 @@ const SixPrototypeQuiz = ({score, setShowQuiz, setScore, amount, setAmount}) => 
       </FormControl>
       </Box>
       <p>{answer}</p>
-      <button type="button" onClick={randomFunction}>Get Random</button>
+      <button type="button" onClick={randomFunction}>Get Random Question</button>
       <button type="button" onClick={submitAnswer}>Submit Answer</button>
     </>
   )
