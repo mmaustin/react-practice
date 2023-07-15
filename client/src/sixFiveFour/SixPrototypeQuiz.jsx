@@ -6,20 +6,26 @@ import { questionsAnswers } from "./numbersObject"
 const SixPrototypeQuiz = ({score, setShowQuiz, setScore, amount, setAmount}) => {
   
   const [randomNumber, setRandomNumber] = useState(0);
+  console.log('random number:', randomNumber);
   const [value, setValue] = useState('');
 
   const handleChange = e => {
     e.preventDefault();
     setValue(e.target.value);
   }
-  console.log(value);
 
   const randomFunction = () => {
-    const random = Math.floor(Math.random() * Object.keys(questionsAnswers).length);
+    let random = 0;
+    while(random === 0){
+      random = Math.floor(Math.random() * Object.keys(questionsAnswers).length);
+    }
+    
     setRandomNumber(random);
     //let property = Object.values(questionsAnswers)[random];
     //console.log(random);
   };
+  
+
   console.log(questionsAnswers);
   let property = Object.values(questionsAnswers)[randomNumber];
   let question, answerChoices, answer;
@@ -44,25 +50,33 @@ const SixPrototypeQuiz = ({score, setShowQuiz, setScore, amount, setAmount}) => 
 
   return (
     <>
-      <p>{question}</p>
-      <Box>
-      <FormControl>
-        <FormLabel id='answer-choices-group-label'>
-          Select Your Answer
-        </FormLabel>
-        <RadioGroup
-          name='answer-choices-group'
-          aria-labelledby="answer-choices-group-label"
-          value={value}
-          onChange={handleChange}
-        >
-          {answerChoices}
-        </RadioGroup>
-      </FormControl>
-      </Box>
-      <p>{answer}</p>
-      <button type="button" onClick={randomFunction}>Get Random Question</button>
-      <button type="button" onClick={submitAnswer}>Submit Answer</button>
+      { !randomNumber ?
+        <>
+          <p>Select Your Question</p>
+          <button type="button" onClick={randomFunction}>Get Random Question</button>
+        </>
+      : <>
+        <p>{question}</p>
+        <Box>
+        <FormControl>
+          <FormLabel id='answer-choices-group-label'>
+            Select Your Answer
+          </FormLabel>
+          <RadioGroup
+            name='answer-choices-group'
+            aria-labelledby="answer-choices-group-label"
+            value={value}
+            onChange={handleChange}
+          >
+            {answerChoices}
+          </RadioGroup>
+        </FormControl>
+        </Box>
+        <p>{answer}</p>
+        <button type="button" onClick={randomFunction}>Get Random Question</button>
+        <button type="button" onClick={submitAnswer}>Submit Answer</button>
+        </>
+      }
     </>
   )
 }
