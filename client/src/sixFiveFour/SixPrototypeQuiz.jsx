@@ -3,7 +3,7 @@ import { useState } from "react";
 import { questionsAnswers } from "./numbersObject"
 //console.log(Object.values(questionsAnswers));
 
-const SixPrototypeQuiz = ({score, setShowQuiz, setScore}) => {
+const SixPrototypeQuiz = ({score, setShowQuiz, setScore, amount, setAmount}) => {
   
   const [randomNumber, setRandomNumber] = useState(0);
   const [value, setValue] = useState('');
@@ -33,9 +33,10 @@ const SixPrototypeQuiz = ({score, setShowQuiz, setScore}) => {
 
   const submitAnswer = () => {
     if(value === answer){
-      setScore(score + 10);
+      setScore(score + amount);
+      setAmount(0);
     } else {
-      console.log('no');
+      setAmount(0);
     }
     delete questionsAnswers[Object.keys(questionsAnswers)[randomNumber]]
     setShowQuiz('');

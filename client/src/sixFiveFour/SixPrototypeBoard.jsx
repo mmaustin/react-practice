@@ -15,6 +15,7 @@ const SixPrototypeBoard = () => {
   const [reset, setReset] = useState('')
   const [score, setScore] = useState(0);
   const [showQuiz, setShowQuiz] = useState('');
+  const [amount, setAmount] = useState(0);
   const navigate = useNavigate();
   
   useEffect(()=>{
@@ -37,11 +38,13 @@ const SixPrototypeBoard = () => {
   
   const [colorOne, setColorOne] = useState('gray');
   const handleSetColorOne = (number, digit) => {
+    setAmount(digit)
     if(randomNumber(number) === true){
       setColorOne('green');
       setScore(score + digit);
       delete numbersObject[number];
       setnumbersObject(numbersObject);
+      setAmount(0);
     } else {
       setColorOne('black');
       setScore(score - digit);
@@ -135,7 +138,7 @@ const SixPrototypeBoard = () => {
       <p>{score}</p>
       { showQuiz ?
         <>
-        <SixPrototypeQuiz score={score} setShowQuiz={setShowQuiz} setScore={setScore}/>
+        <SixPrototypeQuiz score={score} setShowQuiz={setShowQuiz} setScore={setScore} setAmount={setAmount} amount={amount}/>
         {/* <button type="button" onClick={() => setShowQuiz('')}>Show Game Board</button> */}
         </>
         :
