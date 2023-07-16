@@ -1,4 +1,4 @@
-import { Box, FormControl, FormControlLabel, FormLabel, Radio, RadioGroup } from "@mui/material";
+import { Box, FormControl, FormControlLabel, FormLabel, Radio, RadioGroup, Button } from "@mui/material";
 import { useState } from "react";
 import { questionsAnswers } from "./numbersObject"
 //console.log(Object.values(questionsAnswers));
@@ -6,8 +6,8 @@ import { questionsAnswers } from "./numbersObject"
 const SixPrototypeQuiz = ({score, setShowQuiz, setScore, amount, setAmount, startQuizNumber}) => {
   
   const [randomNumber, setRandomNumber] = useState(startQuizNumber);
-  console.log(startQuizNumber);
-  console.log('random number:', randomNumber);
+  // console.log(startQuizNumber);
+  // console.log('random number:', randomNumber);
   const [value, setValue] = useState('');
 
   const handleChange = e => {
@@ -27,7 +27,7 @@ const SixPrototypeQuiz = ({score, setShowQuiz, setScore, amount, setAmount, star
   };
   
 
-  console.log(questionsAnswers);
+  //console.log(questionsAnswers);
   let property = Object.values(questionsAnswers)[randomNumber];
   let question, answerChoices, answer;
   [,question] = Object.entries(property)[0];
@@ -75,7 +75,7 @@ const SixPrototypeQuiz = ({score, setShowQuiz, setScore, amount, setAmount, star
         </Box>
         <p>{answer}</p>
         <button type="button" onClick={randomFunction}>Get Random Question</button>
-        <button type="button" onClick={submitAnswer}>Submit Answer</button>
+        <Button type="button" onClick={submitAnswer} disabled={!value}>Submit Answer</Button>
         </>
       }
     </>

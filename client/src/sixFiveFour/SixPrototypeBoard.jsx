@@ -17,7 +17,7 @@ const SixPrototypeBoard = () => {
   const [showQuiz, setShowQuiz] = useState('');
   const [amount, setAmount] = useState(0);
   const [startQuizNumber, setStartQuizNumber] = useState(0);
-  console.log(`Please Help: ${startQuizNumber}`);
+  //console.log(`Please Help: ${startQuizNumber}`);
   const navigate = useNavigate();
   
   useEffect(()=>{
@@ -39,7 +39,7 @@ const SixPrototypeBoard = () => {
   
   const randomFunction = () => {
     let random = Math.floor(Math.random() * Object.keys(questionsAnswers).length);
-    console.log('another log!', Object.keys(questionsAnswers).length);
+    //console.log('another log!', Object.keys(questionsAnswers).length);
     while(random === 0){
       random = Math.floor(Math.random() * Object.keys(questionsAnswers).length);
     }
