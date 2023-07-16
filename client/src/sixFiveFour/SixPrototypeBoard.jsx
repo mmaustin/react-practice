@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { objectOfNumbers, questionsAnswers } from "./numbersObject";
 import SixPrototypeQuiz from "./SixPrototypeQuiz";
+import SixPrototypeQuizTwo from "./SixPrototypeQuizTwo";
+
 
 
 const SixPrototypeBoard = () => {
@@ -18,7 +20,7 @@ const SixPrototypeBoard = () => {
   const [amount, setAmount] = useState(0);
   const [startQuizNumber, setStartQuizNumber] = useState(0);
   const [displayBoards, setDisplayBoards] = useState(0);
-  //console.log(`Please Help: ${startQuizNumber}`);
+  console.log(displayBoards);
 
   const displayNextBoard = () => {
     setDisplayBoards(displayBoards + 1);
@@ -194,6 +196,9 @@ const SixPrototypeBoard = () => {
         </Stack>
       }
       <button type="button" onClick={()=>setReset('reset')}>Restart</button>
+      {score >= 0 && displayBoards === 6 ?
+        <SixPrototypeQuizTwo/> :
+        undefined}
     </>
   )
 }
