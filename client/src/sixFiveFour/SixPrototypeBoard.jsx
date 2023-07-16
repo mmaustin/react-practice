@@ -17,7 +17,13 @@ const SixPrototypeBoard = () => {
   const [showQuiz, setShowQuiz] = useState('');
   const [amount, setAmount] = useState(0);
   const [startQuizNumber, setStartQuizNumber] = useState(0);
+  const [displayBoards, setDisplayBoards] = useState(0);
   //console.log(`Please Help: ${startQuizNumber}`);
+
+  const displayNextBoard = () => {
+    setDisplayBoards(displayBoards + 1);
+  };
+
   const navigate = useNavigate();
   
   useEffect(()=>{
@@ -58,6 +64,7 @@ const SixPrototypeBoard = () => {
       delete numbersObject[number];
       setnumbersObject(numbersObject);
       setAmount(0);
+      displayNextBoard();
     } else {
       randomFunction();
       setColorOne('black');
@@ -76,7 +83,8 @@ const SixPrototypeBoard = () => {
       setScore(score + digit)
       delete numbersObject[number];
       setnumbersObject(numbersObject);
-      setAmount(0);     
+      setAmount(0);
+      displayNextBoard();   
     } else {
       randomFunction();
       setColorTwo('black');
@@ -95,7 +103,8 @@ const SixPrototypeBoard = () => {
       setScore(score + digit)
       delete numbersObject[number];
       setnumbersObject(numbersObject);  
-      setAmount(0);    
+      setAmount(0);
+      displayNextBoard();
     } else {
       randomFunction();
       setColorThree('black');
@@ -114,7 +123,8 @@ const SixPrototypeBoard = () => {
       setScore(score + digit)
       delete numbersObject[number];
       setnumbersObject(numbersObject); 
-      setAmount(0);     
+      setAmount(0);
+      displayNextBoard();     
     } else {
       randomFunction();
       setColorFour('black');
@@ -133,7 +143,8 @@ const SixPrototypeBoard = () => {
       setScore(score + digit)
       delete numbersObject[number];
       setnumbersObject(numbersObject);
-      setAmount(0);      
+      setAmount(0);
+      displayNextBoard();      
     } else {
       randomFunction();
       setColorFive('black');
@@ -152,7 +163,8 @@ const SixPrototypeBoard = () => {
       setScore(score + digit)
       delete numbersObject[number];
       setnumbersObject(numbersObject); 
-      setAmount(0);     
+      setAmount(0);
+      displayNextBoard();     
     } else {
       randomFunction();
       setColorSix('black');
@@ -168,7 +180,7 @@ const SixPrototypeBoard = () => {
       <p>{score}</p>
       { showQuiz ?
         <>
-        <SixPrototypeQuiz score={score} setShowQuiz={setShowQuiz} setScore={setScore} setAmount={setAmount} amount={amount} startQuizNumber={startQuizNumber}/>
+        <SixPrototypeQuiz score={score} setShowQuiz={setShowQuiz} setScore={setScore} setAmount={setAmount} amount={amount} startQuizNumber={startQuizNumber} displayNextBoard={displayNextBoard}/>
         {/* <button type="button" onClick={() => setShowQuiz('')}>Show Game Board</button> */}
         </>
         :

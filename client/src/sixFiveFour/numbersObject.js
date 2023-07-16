@@ -3,6 +3,10 @@
 export const objectOfNumbers = {'ONE': 'ONE', 'TWO': 'TWO', 'THREE': 'THREE', 'FOUR': 'FOUR', 'FIVE': 'FIVE', 'SIX': 'SIX'};
 
 export const questionsAnswers = {
+  q0: {question: "fake question 0",
+  answers: ['fake answer 0', 'fake answer 0', 'fake answer 0'],
+  answer: 'fake answer 0'
+  },
   q1: {question: "fake question 1",
   answers: ['fake answer 1', 'fake answer 2', 'fake answer 3'],
   answer: 'fake answer 1'
