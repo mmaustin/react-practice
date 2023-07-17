@@ -41,7 +41,7 @@ const SixPrototypeQuiz = ({score, setShowQuiz, setScore, amount, setAmount, star
   const submitAnswer = () => {
     if(value === answer){
       setScore(score + amount);
-      colorProp('brown');
+      colorProp('tan');
       setColorProp(null);
       setAmount(0);
     } else {
