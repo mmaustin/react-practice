@@ -3,7 +3,7 @@ import { useState } from "react";
 import { questionsAnswers } from "./numbersObject"
 //console.log(Object.values(questionsAnswers));
 
-const SixPrototypeQuiz = ({score, setShowQuiz, setScore, amount, setAmount, startQuizNumber, displayNextBoard}) => {
+const SixPrototypeQuiz = ({score, setShowQuiz, setScore, amount, setAmount, startQuizNumber, displayNextBoard, colorProp, setColorProp}) => {
   
   const [randomNumber, setRandomNumber] = useState(startQuizNumber);
   // console.log(startQuizNumber);
@@ -41,8 +41,12 @@ const SixPrototypeQuiz = ({score, setShowQuiz, setScore, amount, setAmount, star
   const submitAnswer = () => {
     if(value === answer){
       setScore(score + amount);
+      colorProp('brown');
+      setColorProp(null);
       setAmount(0);
     } else {
+      colorProp('black');
+      setColorProp(null);
       setAmount(0);
     }
     delete questionsAnswers[Object.keys(questionsAnswers)[randomNumber]]

@@ -20,7 +20,12 @@ const SixPrototypeBoard = () => {
   const [amount, setAmount] = useState(0);
   const [startQuizNumber, setStartQuizNumber] = useState(0);
   const [displayBoards, setDisplayBoards] = useState(0);
-  //const [properColor, setProperColor] = useState('gray');
+  const [colorProp, setColorProp] = useState(null)
+
+  // const handleSetColorProp = (number) => {
+  //   const colorFunctionObject = {'ONE': setColorOne};
+  //   setColorProp(colorFunctionObject);
+  // }
 
   const displayNextBoard = () => {
     setDisplayBoards(displayBoards + 1);
@@ -56,7 +61,9 @@ const SixPrototypeBoard = () => {
     //let property = Object.values(questionsAnswers)[random];
     //console.log(random);
   };
-  
+
+
+  console.log(colorProp);
   
   const [colorOne, setColorOne] = useState('gray');
   //const [chosenOne, setChosenOne] = useState('');
@@ -71,7 +78,8 @@ const SixPrototypeBoard = () => {
       displayNextBoard();
     } else {
       randomFunction();
-      setColorOne('black');
+      setColorProp(()=>setColorOne)
+      //setColorOne('black');
       setScore(score - digit);
       delete numbersObject[number];
       setnumbersObject(numbersObject);
@@ -184,7 +192,7 @@ const SixPrototypeBoard = () => {
       <p>{score}</p>
       { showQuiz ?
         <>
-        <SixPrototypeQuiz score={score} setShowQuiz={setShowQuiz} setScore={setScore} setAmount={setAmount} amount={amount} startQuizNumber={startQuizNumber} displayNextBoard={displayNextBoard} />
+        <SixPrototypeQuiz score={score} setShowQuiz={setShowQuiz} setScore={setScore} setAmount={setAmount} amount={amount} startQuizNumber={startQuizNumber} displayNextBoard={displayNextBoard} colorProp={colorProp} setColorProp={setColorProp}/>
         {/* <button type="button" onClick={() => setShowQuiz('')}>Show Game Board</button> */}
         </>
         :
