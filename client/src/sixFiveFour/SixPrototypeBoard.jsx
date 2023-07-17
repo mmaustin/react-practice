@@ -61,9 +61,6 @@ const SixPrototypeBoard = () => {
     //let property = Object.values(questionsAnswers)[random];
     //console.log(random);
   };
-
-
-  console.log(colorProp);
   
   const [colorOne, setColorOne] = useState('gray');
   //const [chosenOne, setChosenOne] = useState('');
@@ -78,7 +75,7 @@ const SixPrototypeBoard = () => {
       displayNextBoard();
     } else {
       randomFunction();
-      setColorProp(()=>setColorOne)
+      setColorProp(()=>setColorOne);
       //setColorOne('black');
       setScore(score - digit);
       delete numbersObject[number];
@@ -99,7 +96,8 @@ const SixPrototypeBoard = () => {
       displayNextBoard();   
     } else {
       randomFunction();
-      setColorTwo('black');
+      setColorProp(()=>setColorTwo);
+      //setColorTwo('black');
       setScore(score - digit)
       delete numbersObject[number];
       setnumbersObject(numbersObject);
@@ -119,7 +117,8 @@ const SixPrototypeBoard = () => {
       displayNextBoard();
     } else {
       randomFunction();
-      setColorThree('black');
+      setColorProp(()=>setColorThree);
+      //setColorThree('black');
       setScore(score - digit)
       delete numbersObject[number];
       setnumbersObject(numbersObject);
@@ -139,7 +138,8 @@ const SixPrototypeBoard = () => {
       displayNextBoard();     
     } else {
       randomFunction();
-      setColorFour('black');
+      setColorProp(()=>setColorFour);
+      //setColorFour('black');
       setScore(score - digit)
       delete numbersObject[number];
       setnumbersObject(numbersObject);
@@ -159,7 +159,8 @@ const SixPrototypeBoard = () => {
       displayNextBoard();      
     } else {
       randomFunction();
-      setColorFive('black');
+      setColorProp(()=>setColorFive)
+      //setColorFive('black');
       setScore(score - digit)
       delete numbersObject[number];
       setnumbersObject(numbersObject);
@@ -179,7 +180,8 @@ const SixPrototypeBoard = () => {
       displayNextBoard();     
     } else {
       randomFunction();
-      setColorSix('black');
+      setColorProp(()=>setColorSix)
+      //setColorSix('black');
       setScore(score - digit)
       delete numbersObject[number];
       setnumbersObject(numbersObject);
