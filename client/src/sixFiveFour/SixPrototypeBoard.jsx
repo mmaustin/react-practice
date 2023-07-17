@@ -20,7 +20,7 @@ const SixPrototypeBoard = () => {
   const [amount, setAmount] = useState(0);
   const [startQuizNumber, setStartQuizNumber] = useState(0);
   const [displayBoards, setDisplayBoards] = useState(0);
-  const [properColor, setProperColor] = useState('gray');
+  //const [properColor, setProperColor] = useState('gray');
 
   const displayNextBoard = () => {
     setDisplayBoards(displayBoards + 1);
@@ -58,11 +58,12 @@ const SixPrototypeBoard = () => {
   };
   
   
-  //const [colorOne, setColorOne] = useState('gray');
+  const [colorOne, setColorOne] = useState('gray');
+  //const [chosenOne, setChosenOne] = useState('');
   const handleSetColorOne = (number, digit) => {
     setAmount(digit);
     if(randomNumber(number) === true){
-      setProperColor('green');
+      setColorOne('green');
       setScore(score + digit);
       delete numbersObject[number];
       setnumbersObject(numbersObject);
@@ -70,7 +71,7 @@ const SixPrototypeBoard = () => {
       displayNextBoard();
     } else {
       randomFunction();
-      //setColorOne('black');
+      setColorOne('black');
       setScore(score - digit);
       delete numbersObject[number];
       setnumbersObject(numbersObject);
@@ -78,11 +79,11 @@ const SixPrototypeBoard = () => {
     }
   }
 
-  //const [colorTwo, setColorTwo] = useState('gray');
+  const [colorTwo, setColorTwo] = useState('gray');
   const handleSetColorTwo = (number, digit) => {
     setAmount(digit);
     if(randomNumber(number) === true){
-      setProperColor('green');
+      setColorTwo('green');
       setScore(score + digit)
       delete numbersObject[number];
       setnumbersObject(numbersObject);
@@ -90,7 +91,7 @@ const SixPrototypeBoard = () => {
       displayNextBoard();   
     } else {
       randomFunction();
-      //setColorTwo('black');
+      setColorTwo('black');
       setScore(score - digit)
       delete numbersObject[number];
       setnumbersObject(numbersObject);
@@ -98,11 +99,11 @@ const SixPrototypeBoard = () => {
     }
   }
 
-  //const [colorThree, setColorThree] = useState('gray');
+  const [colorThree, setColorThree] = useState('gray');
   const handleSetColorThree = (number, digit) => {
     setAmount(digit);
     if(randomNumber(number) === true){
-      setProperColor('green');
+      setColorThree('green');
       setScore(score + digit)
       delete numbersObject[number];
       setnumbersObject(numbersObject);  
@@ -110,7 +111,7 @@ const SixPrototypeBoard = () => {
       displayNextBoard();
     } else {
       randomFunction();
-      //setColorThree('black');
+      setColorThree('black');
       setScore(score - digit)
       delete numbersObject[number];
       setnumbersObject(numbersObject);
@@ -118,11 +119,11 @@ const SixPrototypeBoard = () => {
     }
   }
 
-  //const [colorFour, setColorFour] = useState('gray');
+  const [colorFour, setColorFour] = useState('gray');
   const handleSetColorFour = (number, digit) => {
     setAmount(digit);
     if(randomNumber(number) === true){
-      setProperColor('green');
+      setColorFour('green');
       setScore(score + digit)
       delete numbersObject[number];
       setnumbersObject(numbersObject); 
@@ -130,7 +131,7 @@ const SixPrototypeBoard = () => {
       displayNextBoard();     
     } else {
       randomFunction();
-      //setColorFour('black');
+      setColorFour('black');
       setScore(score - digit)
       delete numbersObject[number];
       setnumbersObject(numbersObject);
@@ -138,11 +139,11 @@ const SixPrototypeBoard = () => {
     }
   }
 
-  //const [colorFive, setColorFive] = useState('gray');
+  const [colorFive, setColorFive] = useState('gray');
   const handleSetColorFive = (number, digit) => {
     setAmount(digit);
     if(randomNumber(number) === true){
-      setProperColor('green');
+      setColorFive('green');
       setScore(score + digit)
       delete numbersObject[number];
       setnumbersObject(numbersObject);
@@ -150,7 +151,7 @@ const SixPrototypeBoard = () => {
       displayNextBoard();      
     } else {
       randomFunction();
-      //setColorFive('black');
+      setColorFive('black');
       setScore(score - digit)
       delete numbersObject[number];
       setnumbersObject(numbersObject);
@@ -158,11 +159,11 @@ const SixPrototypeBoard = () => {
     }
   }
 
-  //const [colorSix, setColorSix] = useState('gray');
+  const [colorSix, setColorSix] = useState('gray');
   const handleSetColorSix = (number, digit) => {
     setAmount(digit);
     if(randomNumber(number) === true){
-      setProperColor('green');
+      setColorSix('green');
       setScore(score + digit)
       delete numbersObject[number];
       setnumbersObject(numbersObject); 
@@ -170,7 +171,7 @@ const SixPrototypeBoard = () => {
       displayNextBoard();     
     } else {
       randomFunction();
-      //setColorSix('black');
+      setColorSix('black');
       setScore(score - digit)
       delete numbersObject[number];
       setnumbersObject(numbersObject);
@@ -183,17 +184,17 @@ const SixPrototypeBoard = () => {
       <p>{score}</p>
       { showQuiz ?
         <>
-        <SixPrototypeQuiz score={score} setShowQuiz={setShowQuiz} setScore={setScore} setAmount={setAmount} amount={amount} startQuizNumber={startQuizNumber} displayNextBoard={displayNextBoard} setProperColor={setProperColor}/>
+        <SixPrototypeQuiz score={score} setShowQuiz={setShowQuiz} setScore={setScore} setAmount={setAmount} amount={amount} startQuizNumber={startQuizNumber} displayNextBoard={displayNextBoard} />
         {/* <button type="button" onClick={() => setShowQuiz('')}>Show Game Board</button> */}
         </>
         :
         <Stack direction={'row'}>
-          <Box onClick={() => handleSetColorOne('ONE', 1)} color={'white'} bgcolor={properColor} height={'245px'} width={'80px'} sx={{border: '1px solid blue' }}>ONE</Box>
-          <Box onClick={() => handleSetColorTwo('TWO', 2)} color={'white'} bgcolor={properColor} height={'245px'} width={'80px'} sx={{border: '1px solid blue'}}>TWO</Box>
-          <Box onClick={() => handleSetColorThree('THREE', 3)} color={'white'} bgcolor={properColor} height={'245px'} width={'80px'} sx={{border: '1px solid blue'}}>THREE</Box>
-          <Box onClick={() => handleSetColorFour('FOUR', 4)} color={'white'} bgcolor={properColor} height={'245px'} width={'80px'} sx={{border: '1px solid blue'}}>FOUR</Box>
-          <Box onClick={() => handleSetColorFive('FIVE', 5)} color={'white'} bgcolor={properColor} height={'245px'} width={'80px'} sx={{border: '1px solid blue'}}>FIVE</Box>
-          <Box onClick={() => handleSetColorSix('SIX', 6)} color={'white'} bgcolor={properColor} height={'245px'} width={'80px'} sx={{border: '1px solid blue'}}>SIX</Box>
+          <Box onClick={() => handleSetColorOne('ONE', 1)} color={'white'} bgcolor={colorOne} height={'245px'} width={'80px'} sx={{border: '1px solid blue' }}>ONE</Box>
+          <Box onClick={() => handleSetColorTwo('TWO', 2)} color={'white'} bgcolor={colorTwo} height={'245px'} width={'80px'} sx={{border: '1px solid blue'}}>TWO</Box>
+          <Box onClick={() => handleSetColorThree('THREE', 3)} color={'white'} bgcolor={colorThree} height={'245px'} width={'80px'} sx={{border: '1px solid blue'}}>THREE</Box>
+          <Box onClick={() => handleSetColorFour('FOUR', 4)} color={'white'} bgcolor={colorFour} height={'245px'} width={'80px'} sx={{border: '1px solid blue'}}>FOUR</Box>
+          <Box onClick={() => handleSetColorFive('FIVE', 5)} color={'white'} bgcolor={colorFive} height={'245px'} width={'80px'} sx={{border: '1px solid blue'}}>FIVE</Box>
+          <Box onClick={() => handleSetColorSix('SIX', 6)} color={'white'} bgcolor={colorSix} height={'245px'} width={'80px'} sx={{border: '1px solid blue'}}>SIX</Box>
         </Stack>
       }
       <button type="button" onClick={()=>setReset('reset')}>Restart</button>
