@@ -1,4 +1,4 @@
-import { Box, Stack } from "@mui/material";
+import { Box, Stack, Button } from "@mui/material";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { objectOfNumbers, questionsAnswers } from "./numbersObject";
@@ -48,6 +48,7 @@ const SixPrototypeBoard = () => {
   };
   
   const [colorOne, setColorOne] = useState('gray');
+  const [clickedOne, setClickedOne] = useState(false)
   //const [chosenOne, setChosenOne] = useState('');
   // const handleSetColorOne = (number, digit) => {
   //   setAmount(digit);
@@ -178,6 +179,7 @@ const SixPrototypeBoard = () => {
     setAmount(digit);
     switch (number) {
       case 'ONE':
+        setClickedOne(true);
         if(randomNumber(number) === true){
           setColorOne('green');
           setScore(score + digit)
@@ -294,7 +296,7 @@ const SixPrototypeBoard = () => {
         </>
         :
         <Stack direction={'row'}>
-          <Box onClick={() => handleCellFunctionality('ONE', 1)} color={'white'} bgcolor={colorOne} height={'245px'} width={'80px'} sx={{border: '1px solid blue' }}>ONE</Box>
+          <Box onClick={clickedOne ? ()=>{} : () => handleCellFunctionality('ONE', 1)} color={'white'} bgcolor={colorOne} height={'245px'} width={'80px'} sx={{border: '1px solid blue' }}>ONE</Box>
           <Box onClick={() => handleCellFunctionality('TWO', 2)} color={'white'} bgcolor={colorTwo} height={'245px'} width={'80px'} sx={{border: '1px solid blue'}}>TWO</Box>
           <Box onClick={() => handleCellFunctionality('THREE', 3)} color={'white'} bgcolor={colorThree} height={'245px'} width={'80px'} sx={{border: '1px solid blue'}}>THREE</Box>
           <Box onClick={() => handleCellFunctionality('FOUR', 4)} color={'white'} bgcolor={colorFour} height={'245px'} width={'80px'} sx={{border: '1px solid blue'}}>FOUR</Box>
