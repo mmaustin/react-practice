@@ -78,7 +78,7 @@ const SixPrototypeQuiz = ({score, setShowQuiz, setScore, amount, setAmount, star
           </RadioGroup>
         </FormControl>
         </Box>
-        <p>{answer}</p>
+        {/* <p>{answer}</p> */}
         <button type="button" onClick={randomFunction}>Get Random Question</button>
         <Button type="button" onClick={submitAnswer} disabled={!value}>Submit Answer</Button>
         </>
