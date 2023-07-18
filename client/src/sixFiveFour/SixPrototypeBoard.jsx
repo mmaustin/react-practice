@@ -48,7 +48,7 @@ const SixPrototypeBoard = () => {
   };
   
   const [colorOne, setColorOne] = useState('gray');
-  const [clickedOne, setClickedOne] = useState(false)
+  const [clickedOne, setClickedOne] = useState(false);
   //const [chosenOne, setChosenOne] = useState('');
   // const handleSetColorOne = (number, digit) => {
   //   setAmount(digit);
@@ -71,6 +71,7 @@ const SixPrototypeBoard = () => {
   // }
 
   const [colorTwo, setColorTwo] = useState('gray');
+  const [clickedTwo, setClickedTwo] = useState(false);
   // const handleSetColorTwo = (number, digit) => {
   //   setAmount(digit);
   //   if(randomNumber(number) === true){
@@ -92,6 +93,7 @@ const SixPrototypeBoard = () => {
   // }
 
   const [colorThree, setColorThree] = useState('gray');
+  const [clickedThree, setClickedThree] = useState(false);
   // const handleSetColorThree = (number, digit) => {
   //   setAmount(digit);
   //   if(randomNumber(number) === true){
@@ -113,6 +115,7 @@ const SixPrototypeBoard = () => {
   // }
 
   const [colorFour, setColorFour] = useState('gray');
+  const [clickedFour, setClickedFour] = useState(false);
   // const handleSetColorFour = (number, digit) => {
   //   setAmount(digit);
   //   if(randomNumber(number) === true){
@@ -134,6 +137,7 @@ const SixPrototypeBoard = () => {
   // }
 
   const [colorFive, setColorFive] = useState('gray');
+  const [clickedFive, setClickedFive] = useState(false);
   // const handleSetColorFive = (number, digit) => {
   //   setAmount(digit);
   //   if(randomNumber(number) === true){
@@ -155,6 +159,7 @@ const SixPrototypeBoard = () => {
   // }
 
   const [colorSix, setColorSix] = useState('gray');
+  const [clickedSix, setClickedSix] = useState(false);
   // const handleSetColorSix = (number, digit) => {
   //   setAmount(digit);
   //   if(randomNumber(number) === true){
@@ -197,6 +202,7 @@ const SixPrototypeBoard = () => {
         };
         break;
       case 'TWO':
+        setClickedTwo(true);
         if(randomNumber(number) === true){
           setColorTwo('green');
           setScore(score + digit)
@@ -214,6 +220,7 @@ const SixPrototypeBoard = () => {
         };
         break;
       case 'THREE':
+        setClickedThree(true);
         if(randomNumber(number) === true){
           setColorThree('green');
           setScore(score + digit)
@@ -231,6 +238,7 @@ const SixPrototypeBoard = () => {
         };
         break;
       case 'FOUR':
+        setClickedFour(true);
         if(randomNumber(number) === true){
           setColorFour('green');
           setScore(score + digit)
@@ -248,6 +256,7 @@ const SixPrototypeBoard = () => {
         };
         break;
       case 'FIVE':
+        setClickedFive(true);
         if(randomNumber(number) === true){
           setColorFive('green');
           setScore(score + digit)
@@ -265,6 +274,7 @@ const SixPrototypeBoard = () => {
         };
         break;
       case 'SIX':
+        setClickedSix(true);
         if(randomNumber(number) === true){
           setColorSix('green');
           setScore(score + digit)
@@ -297,11 +307,11 @@ const SixPrototypeBoard = () => {
         :
         <Stack direction={'row'}>
           <Box onClick={clickedOne ? ()=>{} : () => handleCellFunctionality('ONE', 1)} color={'white'} bgcolor={colorOne} height={'245px'} width={'80px'} sx={{border: '1px solid blue' }}>ONE</Box>
-          <Box onClick={() => handleCellFunctionality('TWO', 2)} color={'white'} bgcolor={colorTwo} height={'245px'} width={'80px'} sx={{border: '1px solid blue'}}>TWO</Box>
-          <Box onClick={() => handleCellFunctionality('THREE', 3)} color={'white'} bgcolor={colorThree} height={'245px'} width={'80px'} sx={{border: '1px solid blue'}}>THREE</Box>
-          <Box onClick={() => handleCellFunctionality('FOUR', 4)} color={'white'} bgcolor={colorFour} height={'245px'} width={'80px'} sx={{border: '1px solid blue'}}>FOUR</Box>
-          <Box onClick={() => handleCellFunctionality('FIVE', 5)} color={'white'} bgcolor={colorFive} height={'245px'} width={'80px'} sx={{border: '1px solid blue'}}>FIVE</Box>
-          <Box onClick={() => handleCellFunctionality('SIX', 6)} color={'white'} bgcolor={colorSix} height={'245px'} width={'80px'} sx={{border: '1px solid blue'}}>SIX</Box>
+          <Box onClick={clickedTwo ? ()=>{} : () => handleCellFunctionality('TWO', 2)} color={'white'} bgcolor={colorTwo} height={'245px'} width={'80px'} sx={{border: '1px solid blue'}}>TWO</Box>
+          <Box onClick={clickedThree ? ()=>{} : () => handleCellFunctionality('THREE', 3)} color={'white'} bgcolor={colorThree} height={'245px'} width={'80px'} sx={{border: '1px solid blue'}}>THREE</Box>
+          <Box onClick={clickedFour ? ()=>{} : () => handleCellFunctionality('FOUR', 4)} color={'white'} bgcolor={colorFour} height={'245px'} width={'80px'} sx={{border: '1px solid blue'}}>FOUR</Box>
+          <Box onClick={clickedFive ? ()=>{} : () => handleCellFunctionality('FIVE', 5)} color={'white'} bgcolor={colorFive} height={'245px'} width={'80px'} sx={{border: '1px solid blue'}}>FIVE</Box>
+          <Box onClick={clickedSix ? ()=>{} : () => handleCellFunctionality('SIX', 6)} color={'white'} bgcolor={colorSix} height={'245px'} width={'80px'} sx={{border: '1px solid blue'}}>SIX</Box>
         </Stack>
       }
       <button type="button" onClick={()=>setReset('reset')}>Restart</button>
