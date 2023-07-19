@@ -1,4 +1,4 @@
-import { Box, Stack, Button } from "@mui/material";
+import { Box, Stack, Paper, Typography, Button } from "@mui/material";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { objectOfNumbers, questionsAnswers } from "./numbersObject";
@@ -297,28 +297,35 @@ const SixPrototypeBoard = () => {
   }
 
   return (
-    <>
-      <p>{score}</p>
-      { showQuiz ?
-        <>
-        <SixPrototypeQuiz score={score} setShowQuiz={setShowQuiz} setScore={setScore} setAmount={setAmount} amount={amount} startQuizNumber={startQuizNumber} displayNextBoard={displayNextBoard} colorProp={colorProp} setColorProp={setColorProp}/>
-        {/* <button type="button" onClick={() => setShowQuiz('')}>Show Game Board</button> */}
-        </>
-        :
-        <Stack direction={'row'}>
-          <Box onClick={clickedOne ? ()=>{} : () => handleCellFunctionality('ONE', 1)} color={'white'} bgcolor={colorOne} height={'245px'} width={'80px'} sx={{border: '1px solid blue' }}>ONE</Box>
-          <Box onClick={clickedTwo ? ()=>{} : () => handleCellFunctionality('TWO', 2)} color={'white'} bgcolor={colorTwo} height={'245px'} width={'80px'} sx={{border: '1px solid blue'}}>TWO</Box>
-          <Box onClick={clickedThree ? ()=>{} : () => handleCellFunctionality('THREE', 3)} color={'white'} bgcolor={colorThree} height={'245px'} width={'80px'} sx={{border: '1px solid blue'}}>THREE</Box>
-          <Box onClick={clickedFour ? ()=>{} : () => handleCellFunctionality('FOUR', 4)} color={'white'} bgcolor={colorFour} height={'245px'} width={'80px'} sx={{border: '1px solid blue'}}>FOUR</Box>
-          <Box onClick={clickedFive ? ()=>{} : () => handleCellFunctionality('FIVE', 5)} color={'white'} bgcolor={colorFive} height={'245px'} width={'80px'} sx={{border: '1px solid blue'}}>FIVE</Box>
-          <Box onClick={clickedSix ? ()=>{} : () => handleCellFunctionality('SIX', 6)} color={'white'} bgcolor={colorSix} height={'245px'} width={'80px'} sx={{border: '1px solid blue'}}>SIX</Box>
-        </Stack>
-      }
-      <button type="button" onClick={()=>setReset('reset')}>Restart</button>
-      {/* {score >= 0 && displayBoards === 6 ?
-        <SixPrototypeQuizTwo/> :
-        undefined} */}
-    </>
+    <Paper elevation={20} sx={{width: '1000px', mt: '100px'}}>
+      <Box sx={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexFlow: 'column'
+      }} >
+        <Typography mt='20px' mb='50px' variant="h5">Your Score: {score}</Typography>
+        { showQuiz ?
+          <>
+          <SixPrototypeQuiz score={score} setShowQuiz={setShowQuiz} setScore={setScore} setAmount={setAmount} amount={amount} startQuizNumber={startQuizNumber} displayNextBoard={displayNextBoard} colorProp={colorProp} setColorProp={setColorProp}/>
+          {/* <button type="button" onClick={() => setShowQuiz('')}>Show Game Board</button> */}
+          </>
+          :
+          <Stack direction={'row'}>
+            <Box onClick={clickedOne ? ()=>{} : () => handleCellFunctionality('ONE', 1)} color={'white'} bgcolor={colorOne} height={'245px'} width={'80px'} sx={{border: '1px solid blue' }}>ONE</Box>
+            <Box onClick={clickedTwo ? ()=>{} : () => handleCellFunctionality('TWO', 2)} color={'white'} bgcolor={colorTwo} height={'245px'} width={'80px'} sx={{border: '1px solid blue'}}>TWO</Box>
+            <Box onClick={clickedThree ? ()=>{} : () => handleCellFunctionality('THREE', 3)} color={'white'} bgcolor={colorThree} height={'245px'} width={'80px'} sx={{border: '1px solid blue'}}>THREE</Box>
+            <Box onClick={clickedFour ? ()=>{} : () => handleCellFunctionality('FOUR', 4)} color={'white'} bgcolor={colorFour} height={'245px'} width={'80px'} sx={{border: '1px solid blue'}}>FOUR</Box>
+            <Box onClick={clickedFive ? ()=>{} : () => handleCellFunctionality('FIVE', 5)} color={'white'} bgcolor={colorFive} height={'245px'} width={'80px'} sx={{border: '1px solid blue'}}>FIVE</Box>
+            <Box onClick={clickedSix ? ()=>{} : () => handleCellFunctionality('SIX', 6)} color={'white'} bgcolor={colorSix} height={'245px'} width={'80px'} sx={{border: '1px solid blue'}}>SIX</Box>
+          </Stack>
+        }
+        <Button sx={{mt: '15px'}} type="button" onClick={()=>setReset('reset')}>Restart</Button>
+        {/* {score >= 0 && displayBoards === 6 ?
+          <SixPrototypeQuizTwo/> :
+          undefined} */}
+      </Box>
+    </Paper>
   )
 }
 export default SixPrototypeBoard
