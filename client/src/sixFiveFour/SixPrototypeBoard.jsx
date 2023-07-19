@@ -40,7 +40,7 @@ const SixPrototypeBoard = () => {
   }
   
   const randomFunction = () => {
-    let random = Math.floor(Math.random() * Object.keys(questionsAnswers).length);
+    let random = 0//Math.floor(Math.random() * Object.keys(questionsAnswers).length);
     while(random === 0){
       random = Math.floor(Math.random() * Object.keys(questionsAnswers).length);
     }    
