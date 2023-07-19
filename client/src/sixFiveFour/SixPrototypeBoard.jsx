@@ -297,7 +297,15 @@ const SixPrototypeBoard = () => {
   }
 
   return (
-    <Paper elevation={20} sx={{width: '1000px', mt: '100px'}}>
+    <Box sx={{
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      flexFlow: 'column'
+    }}>
+    <Typography mt='50px' variant="h3" fontFamily='cursive' >Random History</Typography>
+    <Typography mt='20px' variant="h5" >Do You Know Five Points Worth Of History?</Typography>
+    <Paper elevation={20} sx={{width: '800px', mt: '75px'}}>
       <Box sx={{
         display: 'flex',
         justifyContent: 'center',
@@ -311,7 +319,7 @@ const SixPrototypeBoard = () => {
           {/* <button type="button" onClick={() => setShowQuiz('')}>Show Game Board</button> */}
           </>
           :
-          <Stack direction={'row'}>
+          <Stack paddingLeft='10px' paddingRight='10px' direction={'row'}>
             <Box onClick={clickedOne ? ()=>{} : () => handleCellFunctionality('ONE', 1)} color={'white'} bgcolor={colorOne} height={'245px'} width={'80px'} sx={{border: '1px solid blue' }}>ONE</Box>
             <Box onClick={clickedTwo ? ()=>{} : () => handleCellFunctionality('TWO', 2)} color={'white'} bgcolor={colorTwo} height={'245px'} width={'80px'} sx={{border: '1px solid blue'}}>TWO</Box>
             <Box onClick={clickedThree ? ()=>{} : () => handleCellFunctionality('THREE', 3)} color={'white'} bgcolor={colorThree} height={'245px'} width={'80px'} sx={{border: '1px solid blue'}}>THREE</Box>
@@ -326,6 +334,7 @@ const SixPrototypeBoard = () => {
           undefined} */}
       </Box>
     </Paper>
+    </Box>
   )
 }
 export default SixPrototypeBoard
