@@ -1,4 +1,4 @@
-import { Box, Stack, Paper, Typography, Button } from "@mui/material";
+import { Box, Stack, Paper, Typography, Button, useMediaQuery } from "@mui/material";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { objectOfNumbers, questionsAnswers } from "./numbersObject";
@@ -15,7 +15,9 @@ const SixPrototypeBoard = () => {
   const [amount, setAmount] = useState(0);
   const [startQuizNumber, setStartQuizNumber] = useState(0);
   const [displayBoards, setDisplayBoards] = useState(0);
-  const [colorProp, setColorProp] = useState(null)
+  const [colorProp, setColorProp] = useState(null);
+
+  const isNonMobileScreens = useMediaQuery("(min-width:900px)");
 
   const displayNextBoard = () => {
     setDisplayBoards(displayBoards + 1);
@@ -40,7 +42,7 @@ const SixPrototypeBoard = () => {
   }
   
   const randomFunction = () => {
-    let random = 0//Math.floor(Math.random() * Object.keys(questionsAnswers).length);
+    let random = Math.floor(Math.random() * Object.keys(questionsAnswers).length);
     while(random === 0){
       random = Math.floor(Math.random() * Object.keys(questionsAnswers).length);
     }    
@@ -305,7 +307,14 @@ const SixPrototypeBoard = () => {
     }}>
     <Typography mt='50px' variant="h3" fontFamily='cursive' >Random History</Typography>
     <Typography mt='20px' variant="h5" >Do You Know Five Points Worth Of History?</Typography>
-    <Paper elevation={20} sx={{width: '800px', mt: '75px'}}>
+    <Paper elevation={20} sx={{
+      width: '800px',
+      mt: '75px',
+      ...(!isNonMobileScreens && {
+        width: 'auto',
+        mt: '20px'
+      })
+      }}>
       <Box sx={{
         display: 'flex',
         justifyContent: 'center',
@@ -319,13 +328,13 @@ const SixPrototypeBoard = () => {
           {/* <button type="button" onClick={() => setShowQuiz('')}>Show Game Board</button> */}
           </>
           :
-          <Stack paddingLeft='10px' paddingRight='10px' direction={'row'}>
-            <Box onClick={clickedOne ? ()=>{} : () => handleCellFunctionality('ONE', 1)} color={'white'} bgcolor={colorOne} height={'245px'} width={'80px'} sx={{border: '1px solid blue' }}>ONE</Box>
-            <Box onClick={clickedTwo ? ()=>{} : () => handleCellFunctionality('TWO', 2)} color={'white'} bgcolor={colorTwo} height={'245px'} width={'80px'} sx={{border: '1px solid blue'}}>TWO</Box>
-            <Box onClick={clickedThree ? ()=>{} : () => handleCellFunctionality('THREE', 3)} color={'white'} bgcolor={colorThree} height={'245px'} width={'80px'} sx={{border: '1px solid blue'}}>THREE</Box>
-            <Box onClick={clickedFour ? ()=>{} : () => handleCellFunctionality('FOUR', 4)} color={'white'} bgcolor={colorFour} height={'245px'} width={'80px'} sx={{border: '1px solid blue'}}>FOUR</Box>
-            <Box onClick={clickedFive ? ()=>{} : () => handleCellFunctionality('FIVE', 5)} color={'white'} bgcolor={colorFive} height={'245px'} width={'80px'} sx={{border: '1px solid blue'}}>FIVE</Box>
-            <Box onClick={clickedSix ? ()=>{} : () => handleCellFunctionality('SIX', 6)} color={'white'} bgcolor={colorSix} height={'245px'} width={'80px'} sx={{border: '1px solid blue'}}>SIX</Box>
+          <Stack paddingLeft='10px' paddingRight='10px' direction={isNonMobileScreens ? 'row' : 'column'}>
+            <Box onClick={clickedOne ? ()=>{} : () => handleCellFunctionality('ONE', 1)} color={'white'} bgcolor={colorOne} height={isNonMobileScreens ? '245px' : '50px'} width={isNonMobileScreens ? '80px' : '100px'} sx={{border: '1px solid blue' }}>ONE</Box>
+            <Box onClick={clickedTwo ? ()=>{} : () => handleCellFunctionality('TWO', 2)} color={'white'} bgcolor={colorTwo} height={isNonMobileScreens ? '245px' : '50px'} width={isNonMobileScreens ? '80px' : '100px'} sx={{border: '1px solid blue'}}>TWO</Box>
+            <Box onClick={clickedThree ? ()=>{} : () => handleCellFunctionality('THREE', 3)} color={'white'} bgcolor={colorThree} height={isNonMobileScreens ? '245px' : '50px'} width={isNonMobileScreens ? '80px' : '100px'} sx={{border: '1px solid blue'}}>THREE</Box>
+            <Box onClick={clickedFour ? ()=>{} : () => handleCellFunctionality('FOUR', 4)} color={'white'} bgcolor={colorFour} height={isNonMobileScreens ? '245px' : '50px'} width={isNonMobileScreens ? '80px' : '100px'} sx={{border: '1px solid blue'}}>FOUR</Box>
+            <Box onClick={clickedFive ? ()=>{} : () => handleCellFunctionality('FIVE', 5)} color={'white'} bgcolor={colorFive} height={isNonMobileScreens ? '245px' : '50px'} width={isNonMobileScreens ? '80px' : '100px'} sx={{border: '1px solid blue'}}>FIVE</Box>
+            <Box onClick={clickedSix ? ()=>{} : () => handleCellFunctionality('SIX', 6)} color={'white'} bgcolor={colorSix} height={isNonMobileScreens ? '245px' : '50px'} width={isNonMobileScreens ? '80px' : '100px'} sx={{border: '1px solid blue'}}>SIX</Box>
           </Stack>
         }
         <Button sx={{mt: '15px'}} type="button" onClick={()=>setReset('reset')}>Restart</Button>
