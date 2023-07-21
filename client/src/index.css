@@ -29,13 +29,6 @@ code {
   flex-direction: column;
 } */
 
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background-color: bisque; 
-}
 
 html,
 body,
@@ -44,4 +37,13 @@ body,
   height: 100%;
   width: 100%;
   /* font-family: "Rubik", sans-serif; */
+}
+
+body {
+  width: 99%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: bisque; 
 }

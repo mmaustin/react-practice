@@ -300,14 +300,22 @@ const SixPrototypeBoard = () => {
 
   return (
     <Box sx={{
-      width: '100%',
+      width: 1,
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
       flexFlow: 'column'
     }}>
-      <Typography mt='50px' variant="h3" fontFamily='cursive' >Random History</Typography>
-      <Typography mt='20px' variant="h5" >Do You Know Five Points Worth Of History?</Typography>
+      <Box sx={{
+        width: 1,
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexFlow: 'column'        
+      }}> 
+        <Typography mt='50px' variant="h3" fontFamily='cursive' >Random History</Typography>
+        <Typography mt='20px' variant="h5" >History Victory Is Five Points!</Typography>
+      </Box>
       <Paper elevation={20} sx={{
         width: '75%',
         mt: '75px',
@@ -338,7 +346,7 @@ const SixPrototypeBoard = () => {
               <Box onClick={clickedSix ? ()=>{} : () => handleCellFunctionality('SIX', 6)} color={'white'} bgcolor={colorSix} height={isNonMobileScreens ? '245px' : '50px'} width={isNonMobileScreens ? '80px' : '200px'} sx={{border: '1px solid blue'}}>SIX</Box>
             </Stack>
           }
-          <Button sx={{mt: '15px'}} type="button" onClick={()=>setReset('reset')}>Restart</Button>
+          <Button sx={{mt: '15px', mb: '15px'}} variant="contained" type="button" onClick={()=>setReset('reset')}>Restart</Button>
           {/* {score >= 0 && displayBoards === 6 ?
             <SixPrototypeQuizTwo/> :
             undefined} */}
