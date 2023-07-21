@@ -16,6 +16,9 @@ const SixPrototypeBoard = () => {
   const [startQuizNumber, setStartQuizNumber] = useState(0);
   const [displayBoards, setDisplayBoards] = useState(0);
   const [colorProp, setColorProp] = useState(null);
+  const [correctGuesses, setCorrectGuesses] = useState(0);
+  const [correctAnswers, setCorrectAnswers] = useState(0);
+  const [wrongTwice, setWrongTwice] = useState(0);
 
   const isNonMobileScreens = useMediaQuery("(min-width: 650px)");
 
@@ -193,6 +196,7 @@ const SixPrototypeBoard = () => {
           delete numbersObject[number];
           setnumbersObject(numbersObject); 
           setAmount(0);
+          setCorrectAnswers(correctAnswers +1);
           displayNextBoard();     
         } else {
           randomFunction();
@@ -211,6 +215,7 @@ const SixPrototypeBoard = () => {
           delete numbersObject[number];
           setnumbersObject(numbersObject); 
           setAmount(0);
+          setCorrectAnswers(correctAnswers +1);
           displayNextBoard();     
         } else {
           randomFunction();
@@ -229,6 +234,7 @@ const SixPrototypeBoard = () => {
           delete numbersObject[number];
           setnumbersObject(numbersObject); 
           setAmount(0);
+          setCorrectAnswers(correctAnswers +1);
           displayNextBoard();     
         } else {
           randomFunction();
@@ -247,6 +253,7 @@ const SixPrototypeBoard = () => {
           delete numbersObject[number];
           setnumbersObject(numbersObject); 
           setAmount(0);
+          setCorrectAnswers(correctAnswers +1);
           displayNextBoard();     
         } else {
           randomFunction();
@@ -265,6 +272,7 @@ const SixPrototypeBoard = () => {
           delete numbersObject[number];
           setnumbersObject(numbersObject); 
           setAmount(0);
+          setCorrectAnswers(correctAnswers +1);
           displayNextBoard();     
         } else {
           randomFunction();
@@ -283,6 +291,7 @@ const SixPrototypeBoard = () => {
           delete numbersObject[number];
           setnumbersObject(numbersObject); 
           setAmount(0);
+          setCorrectAnswers(correctAnswers +1);
           displayNextBoard();     
         } else {
           randomFunction();

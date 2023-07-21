@@ -35,7 +35,7 @@ const SixPrototypeQuiz = ({score, setShowQuiz, setScore, amount, setAmount, star
   [,answer] = Object.entries(property)[2];
 
   answerChoices = answerChoices.map((item, i) => {
-    return <FormControlLabel key={i} control={<Radio/>} label={item} value={item} />
+    return <FormControlLabel sx={{color: 'info.dark'}} key={i} control={<Radio/>} label={item} value={item} />
   })
 
   const submitAnswer = () => {
@@ -71,7 +71,7 @@ const SixPrototypeQuiz = ({score, setShowQuiz, setScore, amount, setAmount, star
         <Typography ml='25px' mr='25px' mb='25px' variant="h5">{question}</Typography>
         <Box>
           <FormControl>
-            <FormLabel id='answer-choices-group-label'>
+            <FormLabel  sx={{color: 'green', mb: '15px'}} id='answer-choices-group-label'>
               Select Your Answer
             </FormLabel>
             <RadioGroup
@@ -85,7 +85,7 @@ const SixPrototypeQuiz = ({score, setShowQuiz, setScore, amount, setAmount, star
           </FormControl>
         </Box>
         {/* <p>{answer}</p> */}
-        <Button type="button" onClick={randomFunction}>Get Random Question</Button>
+        <Button type="button" variant="contained" sx={{mt: '10px', mb: '10px'}} onClick={randomFunction}>Different Question</Button>
         <Button type="button" onClick={submitAnswer} disabled={!value}>Submit Answer</Button>
       </Box>
       }
