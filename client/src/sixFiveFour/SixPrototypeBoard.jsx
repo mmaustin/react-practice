@@ -196,7 +196,7 @@ const SixPrototypeBoard = () => {
           delete numbersObject[number];
           setnumbersObject(numbersObject); 
           setAmount(0);
-          setCorrectAnswers(correctAnswers +1);
+          setCorrectGuesses(correctGuesses +1);
           displayNextBoard();     
         } else {
           randomFunction();
@@ -215,7 +215,7 @@ const SixPrototypeBoard = () => {
           delete numbersObject[number];
           setnumbersObject(numbersObject); 
           setAmount(0);
-          setCorrectAnswers(correctAnswers +1);
+          setCorrectGuesses(correctGuesses + 1);
           displayNextBoard();     
         } else {
           randomFunction();
@@ -234,7 +234,7 @@ const SixPrototypeBoard = () => {
           delete numbersObject[number];
           setnumbersObject(numbersObject); 
           setAmount(0);
-          setCorrectAnswers(correctAnswers +1);
+          setCorrectGuesses(correctGuesses + 1);
           displayNextBoard();     
         } else {
           randomFunction();
@@ -253,7 +253,7 @@ const SixPrototypeBoard = () => {
           delete numbersObject[number];
           setnumbersObject(numbersObject); 
           setAmount(0);
-          setCorrectAnswers(correctAnswers +1);
+          setCorrectGuesses(correctGuesses + 1);
           displayNextBoard();     
         } else {
           randomFunction();
@@ -272,7 +272,7 @@ const SixPrototypeBoard = () => {
           delete numbersObject[number];
           setnumbersObject(numbersObject); 
           setAmount(0);
-          setCorrectAnswers(correctAnswers +1);
+          setCorrectGuesses(correctGuesses + 1);
           displayNextBoard();     
         } else {
           randomFunction();
@@ -291,7 +291,7 @@ const SixPrototypeBoard = () => {
           delete numbersObject[number];
           setnumbersObject(numbersObject); 
           setAmount(0);
-          setCorrectAnswers(correctAnswers +1);
+          setCorrectGuesses(correctGuesses + 1);
           displayNextBoard();     
         } else {
           randomFunction();
@@ -342,7 +342,7 @@ const SixPrototypeBoard = () => {
           <Typography mt='20px' mb='20px' variant="h5">Your Score: {score}</Typography>
           { showQuiz ?
             <>
-            <SixPrototypeQuiz score={score} setShowQuiz={setShowQuiz} setScore={setScore} setAmount={setAmount} amount={amount} startQuizNumber={startQuizNumber} displayNextBoard={displayNextBoard} colorProp={colorProp} setColorProp={setColorProp}/>
+            <SixPrototypeQuiz score={score} setShowQuiz={setShowQuiz} setScore={setScore} setAmount={setAmount} amount={amount} startQuizNumber={startQuizNumber} displayNextBoard={displayNextBoard} colorProp={colorProp} setColorProp={setColorProp} correctAnswers={correctAnswers} wrongTwice={wrongTwice} setCorrectAnswers={setCorrectAnswers} setWrongTwice={wrongTwice}/>
             {/* <button type="button" onClick={() => setShowQuiz('')}>Show Game Board</button> */}
             </>
             :

@@ -3,7 +3,7 @@ import { useState } from "react";
 import { questionsAnswers } from "./numbersObject"
 //console.log(Object.values(questionsAnswers));
 
-const SixPrototypeQuiz = ({score, setShowQuiz, setScore, amount, setAmount, startQuizNumber, displayNextBoard, colorProp, setColorProp}) => {
+const SixPrototypeQuiz = ({score, setShowQuiz, setScore, amount, setAmount, startQuizNumber, displayNextBoard, colorProp, setColorProp, correctAnswers, wrongTwice, setCorrectAnswers, setWrongTwice}) => {
   
   const [randomNumber, setRandomNumber] = useState(startQuizNumber);
   // console.log(startQuizNumber);
@@ -42,10 +42,12 @@ const SixPrototypeQuiz = ({score, setShowQuiz, setScore, amount, setAmount, star
     if(value === answer){
       setScore(score + amount);
       colorProp('tan');
+      setCorrectAnswers(correctAnswers + 1);
       setColorProp(null);
       setAmount(0);
     } else {
       colorProp('black');
+      setWrongTwice(wrongTwice + 1);
       setColorProp(null);
       setAmount(0);
     }
