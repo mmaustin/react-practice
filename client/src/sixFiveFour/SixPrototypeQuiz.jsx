@@ -1,4 +1,4 @@
-import { Box, FormControl, FormControlLabel, FormLabel, Radio, RadioGroup, Button } from "@mui/material";
+import { Box, Typography, FormControl, FormControlLabel, FormLabel, Radio, RadioGroup, Button } from "@mui/material";
 import { useState } from "react";
 import { questionsAnswers } from "./numbersObject"
 //console.log(Object.values(questionsAnswers));
@@ -59,29 +59,35 @@ const SixPrototypeQuiz = ({score, setShowQuiz, setScore, amount, setAmount, star
       { !randomNumber ?
         <>
           <p>Select Your Question</p>
-          <button type="button" onClick={randomFunction}>Get Random Question</button>
+          <Button type="button" onClick={randomFunction}>Get Random Question</Button>
         </>
-      : <>
-        <p>{question}</p>
+      : 
+      <Box sx={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexFlow: 'column'
+      }}>
+        <Typography ml='25px' mr='25px' mb='25px' variant="h5">{question}</Typography>
         <Box>
-        <FormControl>
-          <FormLabel id='answer-choices-group-label'>
-            Select Your Answer
-          </FormLabel>
-          <RadioGroup
-            name='answer-choices-group'
-            aria-labelledby="answer-choices-group-label"
-            value={value}
-            onChange={handleChange}
-          >
-            {answerChoices}
-          </RadioGroup>
-        </FormControl>
+          <FormControl>
+            <FormLabel id='answer-choices-group-label'>
+              Select Your Answer
+            </FormLabel>
+            <RadioGroup
+              name='answer-choices-group'
+              aria-labelledby="answer-choices-group-label"
+              value={value}
+              onChange={handleChange}
+            >
+              {answerChoices}
+            </RadioGroup>
+          </FormControl>
         </Box>
         {/* <p>{answer}</p> */}
-        <button type="button" onClick={randomFunction}>Get Random Question</button>
+        <Button type="button" onClick={randomFunction}>Get Random Question</Button>
         <Button type="button" onClick={submitAnswer} disabled={!value}>Submit Answer</Button>
-        </>
+      </Box>
       }
     </>
   )

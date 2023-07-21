@@ -330,7 +330,7 @@ const SixPrototypeBoard = () => {
           alignItems: 'center',
           flexFlow: 'column'
         }} >
-          <Typography mt='20px' mb='50px' variant="h5">Your Score: {score}</Typography>
+          <Typography mt='20px' mb='20px' variant="h5">Your Score: {score}</Typography>
           { showQuiz ?
             <>
             <SixPrototypeQuiz score={score} setShowQuiz={setShowQuiz} setScore={setScore} setAmount={setAmount} amount={amount} startQuizNumber={startQuizNumber} displayNextBoard={displayNextBoard} colorProp={colorProp} setColorProp={setColorProp}/>
