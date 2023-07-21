@@ -358,7 +358,7 @@ console.log(displayBoards);
               <Box onClick={clickedSix ? ()=>{} : () => handleCellFunctionality('SIX', 6)} color={'white'} bgcolor={colorSix} height={isNonMobileScreens ? '245px' : '50px'} width={isNonMobileScreens ? '80px' : '200px'} sx={{border: '1px solid blue'}}>SIX</Box>
             </Stack>
           }
-          <Button sx={{mt: '15px', mb: '15px'}} variant="contained" type="button" onClick={()=>setReset('reset')}>Restart</Button>
+          <Button sx={{mt: '15px', mb: '15px'}} variant="contained" type="button" onClick={()=>setReset('reset')}>Play Again</Button>
         </Box>
       </Paper>
     </Box>
