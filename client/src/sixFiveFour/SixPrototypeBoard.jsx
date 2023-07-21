@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { objectOfNumbers, questionsAnswers } from "./numbersObject";
 import SixPrototypeQuiz from "./SixPrototypeQuiz";
-//import SixPrototypeQuizTwo from "./SixPrototypeQuizTwo";
+import SixPrototypeQuizTwo from "./SixPrototypeQuizTwo";
 
 
 
@@ -306,7 +306,7 @@ const SixPrototypeBoard = () => {
           console.log('something done gone way wrong!!!');
     }
   }
-
+console.log(displayBoards);
   return (
     <Box sx={{
       width: 1,
@@ -327,7 +327,7 @@ const SixPrototypeBoard = () => {
       </Box>
       <Paper elevation={20} sx={{
         width: '75%',
-        mt: '75px',
+        mt: '35px',
         ...(!isNonMobileScreens && {
           width: '75%',
           mt: '20px'
@@ -340,9 +340,12 @@ const SixPrototypeBoard = () => {
           flexFlow: 'column'
         }} >
           <Typography mt='20px' mb='20px' variant="h5">Your Score: {score}</Typography>
+          {displayBoards === 6 ?
+            <SixPrototypeQuizTwo score={score} correctGuesses={correctGuesses} correctAnswers={correctAnswers} wrongTwice={wrongTwice} /> :
+            undefined}       
           { showQuiz ?
             <>
-            <SixPrototypeQuiz score={score} setShowQuiz={setShowQuiz} setScore={setScore} setAmount={setAmount} amount={amount} startQuizNumber={startQuizNumber} displayNextBoard={displayNextBoard} colorProp={colorProp} setColorProp={setColorProp} correctAnswers={correctAnswers} wrongTwice={wrongTwice} setCorrectAnswers={setCorrectAnswers} setWrongTwice={wrongTwice}/>
+            <SixPrototypeQuiz score={score} setShowQuiz={setShowQuiz} setScore={setScore} setAmount={setAmount} amount={amount} startQuizNumber={startQuizNumber} displayNextBoard={displayNextBoard} colorProp={colorProp} setColorProp={setColorProp} correctAnswers={correctAnswers} wrongTwice={wrongTwice} setCorrectAnswers={setCorrectAnswers} setWrongTwice={setWrongTwice}/>
             {/* <button type="button" onClick={() => setShowQuiz('')}>Show Game Board</button> */}
             </>
             :
@@ -356,9 +359,6 @@ const SixPrototypeBoard = () => {
             </Stack>
           }
           <Button sx={{mt: '15px', mb: '15px'}} variant="contained" type="button" onClick={()=>setReset('reset')}>Restart</Button>
-          {/* {score >= 0 && displayBoards === 6 ?
-            <SixPrototypeQuizTwo/> :
-            undefined} */}
         </Box>
       </Paper>
     </Box>
