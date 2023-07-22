@@ -9,12 +9,12 @@ const SixPrototypeQuizTwo = ({score, correctAnswers, correctGuesses, wrongTwice}
       alignItems: 'center',
       flexFlow: "wrap"
     }}>
-      {/* {score >= 5 ? (
-        <p>Good Job, My Friend.</p>
+      {score >= 5 ? (
+        <Typography color='green' mb='20px' variant='h6'>You Have Conquered History!</Typography >
       ) :
-         (<p>Why Don't You Give That Another Try.</p>
-      )} */}
-      {score >= 5 && correctAnswers <= 2 && (
+         (<Typography color='red' mb='20px' variant='h6' >You Can't Get Five Points?</Typography >
+      )}
+      {/* {score >= 5 && correctAnswers <= 2 && (
         <Typography color='green' mb='20px' variant="h6" >You Guessed Well, My Friend</Typography >
       )}
       {score >= 5 && correctAnswers === 3 && (
@@ -34,7 +34,7 @@ const SixPrototypeQuizTwo = ({score, correctAnswers, correctGuesses, wrongTwice}
       )}
       {score < 5 && correctAnswers <= 3 && correctGuesses >= 2 &&(
         <Typography color='red' mb='20px' variant="h6" >Could've Gone Either Way, I Think???</Typography >
-      )}
+      )} */}
     </Box>
   )
 }
