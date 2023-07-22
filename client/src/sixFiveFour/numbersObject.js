@@ -23,16 +23,48 @@ export const questionsAnswers = {
   answers: ['Barbara Tuchman', 'Eleanor Roosevelt', 'Helen Thomas'],
   answer: 'Barbara Tuchman'
   },
-  q5: {question: "Which institution was a major investor in 19th Century slave-backed securities?",
-  answers: ['JP Morgan', 'Brown Brothers', 'Bank of New York'],
+  q5: {question: "Which institution was a major source of credit to antebellum enslavers and cotton producers?",
+  answers: ['JP Morgan', 'Brown Brothers', 'Credit Suisse'],
   answer: 'Brown Brothers'
   },
   q6: {question: "Which Revolutionary War figure and Virginian uttered the words 'Give me liberty, or give me death!'?",
   answers: ['James Monroe', 'George Mason', 'Patrick Henry'],
   answer: 'Patrick Henry'
   },
-  q7: {question: "Franklin, Tennessee was named for this man who was partner in the largest internal slave trading firm in the country.",
-  answers: ['Horatio Franklin', 'Franklin Templeton', 'Isaac Franklin'],
+  q7: {question: "Franklin, Tennessee is named for this man who was partner in the largest internal slave trading firm in the country.",
+  answers: ['Benjamin Franklin', 'Franklin Templeton', 'Isaac Franklin'],
   answer: 'Isaac Franklin'
   },
+  q8: {question: "Under Lord Dunmore's command, the British Fleet unloaded on and set ablaze this coastal Colonial city.",
+  answers: ['Norfolk', 'Baltimore', 'Jersey City'],
+  answer: 'Norfolk'
+  },
+  q9: {question: "This famed civil rights leader passed away on July 17, 2020, the same day that his colleague in the struggle, John Robert Lewis, passed.",
+  answers: ['Hosea Lorenzo Williams', 'Cordy Tindell Vivian', 'Joseph Echols Lowery'],
+  answer: 'Cordy Tindell Vivian'
+  },
+  q10: {question: "After taking and passing the New York bar exam during his third year of law school, FDR dropped out and never graduated from which law school?",
+  answers: ['Yale', 'Columbia', 'Harvard'],
+  answer: 'Columbia'
+  },
+  q11: {question: "The free Black population in America roughly numbered when Southern states began seceding from the Union?",
+  answers: ['500,000', '1,000,000', '1,500,00'],
+  answer: '500,000'
+  },
+  q12: {question: "Confederate General Jubal Early's command and the Shenandoah Valley both found ruin at the hands of this Union general.",
+  answers: ['John Pope', 'Benjamin Butler', 'Philip Sheridan'],
+  answer: 'Philip Sheridan'
+  },
+  q13: {question: "Contrary to initial reports, President Harry Truman did indeed defeat this man in the 1948 presidential contest.",
+  answers: ['Thomas Dewey', 'Wendell Willkie', 'Adlai Stevenson II'],
+  answer: 'Thomas Dewey'
+  },
+  q14: {question: "Who was Francis Scott Key's friend and brother-in-law?",
+  answers: ['John Wilkes Booth', 'Stephan Douglas', 'Roger Taney'],
+  answer: 'Roger Taney'
+  },
+  q15: {question: "Serving symbolically for just twenty-four hours, she, nevertheless, was the first woman to serve in the Senate.",
+  answers: ['Rebecca Latimer Felton', 'Tallulah Bankhead', 'Hattie Caraway'],
+  answer: 'Rebecca Latimer Felton'
+  }
 };
