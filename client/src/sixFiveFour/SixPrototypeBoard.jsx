@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { objectOfNumbers, questionsAnswers } from "./numbersObject";
 import SixPrototypeQuiz from "./SixPrototypeQuiz";
 import SixPrototypeQuizTwo from "./SixPrototypeQuizTwo";
-
+import InfoBox from "./InfoBox";
 
 
 const SixPrototypeBoard = () => {
@@ -306,7 +306,7 @@ const SixPrototypeBoard = () => {
           console.log('something done gone way wrong!!!');
     }
   }
-console.log(displayBoards);
+
   return (
     <Box sx={{
       width: 1,
@@ -321,7 +321,8 @@ console.log(displayBoards);
         justifyContent: 'center',
         alignItems: 'center',
         flexFlow: 'column'        
-      }}> 
+      }}>
+        <InfoBox />
         <Typography mt='50px' variant="h3" fontFamily='cursive' >Random History</Typography>
         <Typography mt='20px' variant="h5" >History Victory Is Five Points!</Typography>
       </Box>
